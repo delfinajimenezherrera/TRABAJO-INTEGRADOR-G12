@@ -1,0 +1,63 @@
+.arriba {
+    font-size: 15px;
+    text-align: center;
+    color: white;
+}
+
+body{
+    background-color: #0f1819 ;
+}
+
+.generopelis{
+    background-image:url(./img1/grad.png) ;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+
+.accion{
+order: 1;
+align-self: flex-start;
+width: 250px;
+height: 150px;
+margin: 15px;
+}
+
+.crimen{
+    order: 2;
+    align-self: center;
+    width: 250px;
+height: 150px;
+margin: 15px;
+
+}
+
+.ficcion{
+    order: 3;
+    align-self: center;
+    width: 250px;
+height: 150px;
+margin: 15px;
+
+}
+.romantica{
+    order: 4;
+    align-self: flex-end;
+    width: 250px;
+height: 150px;
+margin: 15px;
+}
+.terror{
+    order: 5;
+    align-self: flex-start;
+    width: 250px;
+height: 150px;
+margin: 15px;
+}
+
+.generoserie{
+background-image: url(./img1/grad.png);
+text-align: center;
+font-size: 30px;
+color: white;
+}
