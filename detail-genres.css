@@ -1,0 +1,40 @@
+.titulo{
+    background-image:url(./img1/grad.png) ;
+    text-align:left;
+    font-size: 30px;
+    margin: 15px;
+    color: rgb(255, 255, 255);
+
+}
+body{
+    background-color:  hsl(186, 25%, 8%) ;
+    box-sizing: border-box;
+}
+.avengers{
+    order: 1;
+    align-self: flex-start;
+    width: 250px;
+    height: 150px;
+    margin: 15px;
+}
+.gladiator{
+    order: 2;
+align-self: center;
+width: 250px;
+height: 150px;
+margin: 15px;
+}
+.rapidos{
+    order: 3;
+    align-self: center;
+    width: 250px;
+    height: 150px;
+    margin: 15px;  
+}
+.starwars{
+    order: 4;
+align-self: flex-end;
+width: 250px;
+height: 150px;
+margin: 15px;
+}
