@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #0f1819;
+    width: 100%;
+}
+.header {
+    display: flex;
+    height: 100px;
+    font-size: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.ppop{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: blueviolet;
+    background-image:url();
+}   
+.Container {
+   display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 1%;
+    height: 160px;
+}
+.item{
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 5px;
+    color: rgb(255, 255, 255);
+    
+}
+
+
+
