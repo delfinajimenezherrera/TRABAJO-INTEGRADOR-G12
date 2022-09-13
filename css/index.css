@@ -12,43 +12,67 @@ body{
     color: rgb(255, 255, 255);
 }
 
-.ppop{
+.barras{
     font-size: 20px;
     color: rgb(255, 255, 255);
     background-color: blueviolet;
-    background-image:url();
+    background-image: url(../img1/grad.png)
 }   
-.Containerp {
+.peliculaspop {
    display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around; 
-    margin: 1%;
-    height: 150px;
+    margin: 1% 1% 3% 1%;
 }
-.item{
+.pelicula{
     width: 250px;
     height: 150px;
     display: flex;
-    flex-wrap: nowrap;
-    font-size: 5px;
-    color: rgb(255, 255, 255);
-    
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    margin: 2px;
 }
-.Containera {
-    display: flex;
-     flex-wrap: nowrap;
-     flex-direction: row;
-     justify-content: space-around;
-     margin: 1%;
-     height: 70px;
+.imagenport{
+    width: 100%;
 }
-.titulos{
+
+.titaño{
     color: rgb(255, 255, 255);
-    width: 250px;
-    height: 150px;
-    display: flex;
-    flex-wrap: nowrap;
-    font-size: 15px;
     text-align: center;
+    font-size: 10px;
+}
+.seriespop {
+    display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     justify-content: space-around; 
+     margin: 1% 1% 3% 1%;
+}
+.series{
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    margin: 2px;
+}
+.masvisto {
+    display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     justify-content: space-around; 
+     margin: 1% 1% 3% 1%;
+}
+.peliculavis{
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    margin: 2px;
+
 }
