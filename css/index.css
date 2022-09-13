@@ -18,13 +18,13 @@ body{
     background-color: blueviolet;
     background-image:url();
 }   
-.Container {
+.Containerp {
    display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-around; 
     margin: 1%;
-    height: 160px;
+    height: 150px;
 }
 .item{
     width: 250px;
@@ -35,6 +35,20 @@ body{
     color: rgb(255, 255, 255);
     
 }
-
-
-
+.Containera {
+    display: flex;
+     flex-wrap: nowrap;
+     flex-direction: row;
+     justify-content: space-around;
+     margin: 1%;
+     height: 70px;
+}
+.titulos{
+    color: rgb(255, 255, 255);
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 15px;
+    text-align: center;
+}
