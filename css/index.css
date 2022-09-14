@@ -13,11 +13,15 @@ body{
 }
 .tit {
     align-self: center;
+    font-family: AgrandirR;
+    font-weight: bold;
 }
 .menu {
     align-self: center;
     padding: 20px;
     font-size: 15px;
+    font-family: Kollektif;
+    color: rgb(255, 255, 255);  ;
 }
 .input {
     align-self: center;
@@ -26,8 +30,9 @@ body{
 .barras{
     font-size: 20px;
     color: rgb(255, 255, 255);
-    background-color: blueviolet;
-    background-image: url(../img1/grad.png)
+    background-image: url(../img1/grad.png);
+    font-family: AgrandirW;
+    font-weight: bolder;
 }   
 .peliculaspop {
    display: flex;
@@ -53,6 +58,7 @@ body{
     color: rgb(255, 255, 255);
     text-align: center;
     font-size: 10px;
+    font-family: Kollektif;
 }
 .seriespop {
     display: flex;
@@ -86,4 +92,16 @@ body{
     justify-content: center;
     margin: 2px;
 
+}
+@font-face {
+    font-family: Kollektif;
+    src: url(../tipografias/Kollektif.ttf);
+}
+@font-face {
+    font-family: AgrandirR ;
+    src: url(../tipografias/Agrandir-Regular.ttf);
+}
+@font-face {
+    font-family: AgrandirW;
+    src: url(../tipografias/Agrandir-WideLight.ttf);
 }
