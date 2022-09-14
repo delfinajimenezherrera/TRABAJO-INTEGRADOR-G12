@@ -38,6 +38,7 @@ body {
     .contenedorpadre2 h2 {
         margin-block-start: 0px;
         color: white;
+        margin: 0px 0px 0px;
     
     }
     .contenedorpadre3 {
@@ -52,4 +53,5 @@ body {
     }
     .estrellas {
         width: 150px; 
+   
     }
