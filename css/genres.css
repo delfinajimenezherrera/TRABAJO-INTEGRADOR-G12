@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 .arriba {
     font-size: 15px;
     text-align: center;

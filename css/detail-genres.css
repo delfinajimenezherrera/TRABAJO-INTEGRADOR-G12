@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 .titulo{
     background-image:url(../img1/grad.png) ;
     font-size: 20px;
@@ -8,7 +11,6 @@
 }
 body{
     background-color:  hsl(186, 25%, 8%) ;
-    box-sizing: border-box;
 }
 
 .header {
