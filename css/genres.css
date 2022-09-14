@@ -32,9 +32,10 @@ body{
 }
 .generopelis{
     background-image:url(../img1/grad.png);
-    text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     color: rgb(255, 255, 255);
+    font-family: AgrandirW;
+    font-weight: bolder;
 }
 
 .accion{
@@ -79,14 +80,28 @@ margin: 15px;
 
 .generoserie{
 background-image: url(../img1/grad.png);
-text-align: center;
-font-size: 30px;
+font-size: 20px;
 color: white;
+font-family: AgrandirW;
+font-weight: bolder;
 }
+
 .footer {
     width: 100%;
     font-size: 12px;
     font-family: AgrandirR ;
     text-align: center;
     color: grey;
+}
+@font-face {
+    font-family: Kollektif;
+    src: url(../tipografias/Kollektif.ttf);
+}
+@font-face {
+    font-family: AgrandirR ;
+    src: url(../tipografias/Agrandir-Regular.ttf);
+}
+@font-face {
+    font-family: AgrandirW;
+    src: url(../tipografias/Agrandir-WideLight.ttf);
 }
