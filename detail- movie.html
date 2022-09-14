@@ -14,12 +14,12 @@
         <img class="logo" src="./img1/logo.png" alt="Logo"> 
         <h1 class= "tit">POPCORN ON</h1> 
         <nav class="menu">
-            <h3 class="menu"><a href="">MOVIES</a>    |     <a href= "">SERIES</a>     |    <a href="">SERIES</a>     |     <a href="">FAVORITOS</a></h3>
+           <a href="./index.html">MOVIES</a>    |     <a href= "./index.html">SERIES</a>     |    <a href="./genres.html">GENEROS</a>     |     <a href="">FAVORITOS</a>
           </nav>
-    <form action="" method="GET" class="input">
-    <input type="search" name="busqueda" placeholder="...">
-        <input type="submit" value="Buscar">
-           </form>
+        <form action="./search-results.html" method="GET" class="input">
+            <input type="search" name="busqueda" placeholder="..." class="buscador">
+                <input type="submit" value="Buscar" class="botonBuscador">
+        </form>
     </header>
     <section class="contenedorpadre">
         <div class="cajagrande">
@@ -29,16 +29,19 @@
                 <img src="./img1/estrellas.png" alt=""class="estrellas"> 
                 <p>25/12/1980</p>
                 <p> TERROR</p>
-                <p> La película relata la historia de Jack Torrance, un ex profesor que acepta un puesto como vigilante
-                    de invierno en un solitario hotel de alta montaña para ocuparse del mantenimiento. Al poco tiempo de
+                <p> Jack Torrance, acepta un puesto como vigilante de invierno en un hotel para ocuparse del mantenimiento. Al poco tiempo de
                     haberse instalado allí junto con su esposa y su hijo, empieza a sufrir inquietantes trastornos de
                     personalidad.
                 </p>
+                <form action="" method=" GET">
+                    <input type="radio" name="Favoritos" value="Agregar a favoritos"> <label class="favoritos"> Agregar a favoritos</label>
+                </form>
             </div>
 
 
         </div>
     </section>
+    <footer class="footer"> 2022. Todos los derechos reservados ©. Hecho por Yasmin Reinhardt, Delfina Jimenez Herrera & Jazmin Lombardi</footer>
 
 </body>
 

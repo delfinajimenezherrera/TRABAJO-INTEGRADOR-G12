@@ -16,12 +16,15 @@ body{
     font-family: AgrandirR;
     font-weight: bold;
 }
+.menu a {
+    font-size: 15px;
+    font-family: Kollektif;
+    color: rgb(255, 255, 255);  
+    text-decoration: none;
+}
 .menu {
     align-self: center;
     padding: 20px;
-    font-size: 15px;
-    font-family: Kollektif;
-    color: rgb(255, 255, 255);  ;
 }
 .input {
     align-self: center;
@@ -92,6 +95,13 @@ body{
     justify-content: center;
     margin: 2px;
 
+}
+.footer {
+    width: 100%;
+    font-size: 12px;
+    font-family: AgrandirR ;
+    text-align: center;
+    color: grey;
 }
 @font-face {
     font-family: Kollektif;

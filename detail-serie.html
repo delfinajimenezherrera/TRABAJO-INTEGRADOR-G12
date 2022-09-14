@@ -14,12 +14,12 @@
         <img class="logo" src="./img1/logo.png" alt="Logo"> 
         <h1 class= "tit">POPCORN ON</h1> 
         <nav class="menu">
-            <h3 class="menu"><a href="">MOVIES</a>    |     <a href= "">SERIES</a>     |    <a href="">SERIES</a>     |     <a href="">FAVORITOS</a></h3>
+            <a href="./index.html">MOVIES</a>    |     <a href= "./index.html">SERIES</a>     |    <a href="./genres.html">GENEROS</a>     |     <a href="">FAVORITOS</a>
           </nav>
-    <form action="" method="GET" class="input">
-    <input type="search" name="busqueda" placeholder="...">
-        <input type="submit" value="Buscar">
-           </form>
+        <form action="./search-results.html" method="GET" class="input">
+            <input type="search" name="busqueda" placeholder="..." class="buscador">
+                <input type="submit" value="Buscar" class="botonBuscador">
+        </form>
     </header>
    <section class="contenedorpadre">
         <div class="cajagrande">
@@ -32,11 +32,15 @@
                 <p> DRAMA ADOLESENCIA</p>
                 <p>  La trama principal de la serie, se basa en Gossip Girl, el cual es un blog en internet muy conocido, que narra día a día chismes, conflictos amorosos, familiares y económicos de un grupo de jóvenes multimillonarios de la élite de Manhattan.
                 </p>
+                <form action="" method=" GET">
+                    <input type="radio" name="Favoritos" value="Agregar a favoritos"> <label class="favoritos"> Agregar a favoritos</label>
+                </form>
             </div>
 
 
         </div>
     </section>
+    <footer class="footer"> 2022. Todos los derechos reservados ©. Hecho por Yasmin Reinhardt, Delfina Jimenez Herrera & Jazmin Lombardi</footer>
 
 </body>
 

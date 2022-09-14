@@ -17,10 +17,15 @@ body{
 .tit {
     align-self: center;
 }
-.menu {
+.menu { /* clase del manu de barras para que se centre*/
     align-self: center;
     padding: 20px;
+}
+.menu a {
     font-size: 15px;
+    font-family: Kollektif;
+    color: rgb(255, 255, 255);  
+    text-decoration: none;
 }
 .input {
     align-self: center;
@@ -77,4 +82,11 @@ background-image: url(../img1/grad.png);
 text-align: center;
 font-size: 30px;
 color: white;
+}
+.footer {
+    width: 100%;
+    font-size: 12px;
+    font-family: AgrandirR ;
+    text-align: center;
+    color: grey;
 }
