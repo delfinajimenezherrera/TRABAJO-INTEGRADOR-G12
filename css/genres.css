@@ -54,6 +54,7 @@ body{
     color: rgb(255, 255, 255);
     font-family: AgrandirW;
     font-weight: bolder;
+    padding: 10px;
 }
 
 .accion{
@@ -102,6 +103,7 @@ font-size: 20px;
 color: white;
 font-family: AgrandirW;
 font-weight: bolder;
+padding: 10px;
 }
 
 .footer {
