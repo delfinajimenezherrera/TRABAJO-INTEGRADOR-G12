@@ -16,18 +16,33 @@ body{
     font-weight: bold;
 }
 .menu a {
-    font-size: 15px;
+    font-size: 16px;
     font-family: Kollektif;
     color: rgb(255, 255, 255);  
     text-decoration: none;
+    padding: 30px;
+
 
 }
 .menu {
     align-self: center;
-    padding: 20px;
+    padding: 50px;
 }
 .input {
     align-self: center;
+}
+.buscador {
+    border-radius: 30px;
+    outline: none;
+    padding: 5px;
+    background-color: rgba(227, 224, 224, 0.763);
+}
+.botonBuscador {
+    border-radius: 30px;
+    padding: 7px;
+    background-color: rgba(227, 224, 224, 0.763);
+    font-family:Kollektif ;
+
 }
 .barras{
     font-size: 20px;
