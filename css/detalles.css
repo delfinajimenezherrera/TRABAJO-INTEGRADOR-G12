@@ -134,57 +134,69 @@ body {
     src: url(../tipografias/Agrandir-WideLight.ttf);
     }
 @media (max-width: 450px) {
-    .header {
+    .contenedorpadre { /* Es la flex box que contiene todo*/
         display: flex;
-        height: 50px;
-        font-size: 10px;
-        color: rgb(255, 255, 255);
+        flex-wrap: wrap;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        width: 100vw; /* Para que ocupe la pantalla entera y despues se pueda centrar*/
+        margin: 1% 1% 7% 1%;
+    } 
+.cajagrande { 
+    display: flex; /* Se mueven los items para el costado y no se van abajo*/
+    height: 50vh; /* Queda centrado en el medio*/
+    align-items: flex-start; /* Para que queden todos alineados al en el "start" de la caja*/
     }
-    .tit { /* clase del titulo para que se centre*/
-        align-self: center;
-        font-family: AgrandirR ;
-    }
-    .menu a {
-        font-size: 10px;
-        font-family: Kollektif;
-        color: rgb(255, 255, 255);  
-        text-decoration: none;
-        padding: 5px;
-        transition: color .5s;
-    }
-    .menu a:hover {
-        color: pink;
-    }
-    .menu {
-        align-self: center;
-        padding: 50px;
-    }    
     
-    .input { /* clase del buscador para que se centre*/
-        align-self: center;
+.contenedorpadre2 {
+        display: flex;
+        padding: 15px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        color: black;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 600px; /* Para que el texto no se vaya para abajo, si no que se quede dentro de la caja */
     }
-    .buscador {
-        border-radius: 30px;
-        outline: none;
-        padding: 5px;
-        background-color: rgba(227, 224, 224, 0.763);
-    }
-    .botonBuscador {
-        border-radius: 30px; /* Para que la forma sea cirular y no un cuadrado */
-        padding: 7px;
-        background-color: rgba(227, 224, 224, 0.763);
-        font-family:Kollektif ;
-    }
-    .imgpelicula {
-        width: 300px;
-        border-radius: 30px; 
-    }
-    .estrellas {
-        width: 100px; 
-        margin: 0px 0px 20px;
+.contenedorpadre2 p {
+        margin: 0px 0px 20px; /* Para que solo se modifique el margin de abajo */
         font-size: 20px;
         color: white;
-        font-family: Kollektif;  
+        font-family: Kollektif;
     }
 
+.favoritos {
+    color: aliceblue;
+    font-family: Kollektif;
+    font-size: 18px;
+}
+.circuloFavoritos {  /* clase creada para que el boton de favoritos se aline con la imagen */
+    margin: 0px 5px 0px 0px;
+}
+.contenedorpadre2 h2 {
+    color: white;
+    margin: 0px 0px 20px;
+    font-family: AgrandirW;
+}
+
+.contenedorpadre3 {        
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+    
+.imgpelicula {
+    width: 650px;
+    border-radius: 30px; 
+}
+.estrellas {
+    width: 150px; 
+    margin: 0px 0px 20px;
+    font-size: 20px;
+    color: white;
+    font-family: Kollektif;  
+}
 }
