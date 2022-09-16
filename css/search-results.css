@@ -1,11 +1,6 @@
 *{
     box-sizing: border-box;
 }
-.arriba {
-    font-size: 15px;
-    text-align: center;
-    color: white;
-}
 
 body{
     background-color: #0f1819 ;
@@ -17,22 +12,24 @@ body{
     font-size: 10px;
     color: rgb(255, 255, 255);
 }
-.tit {
+.tit { /* clase del titulo para que se centre*/
     align-self: center;
+    font-family: AgrandirR ;
 }
 .menu { /* clase del manu de barras para que se centre*/
     align-self: center;
     padding: 50px;
 }
-.menu a {
+.menu a { /* dentro de menu acceda al link */
     font-size: 16px;
     font-family: Kollektif;
     color: rgb(255, 255, 255);  
     text-decoration: none;
-    padding: 30px;
+    padding: 30px; /* Para que se separen unos de otros */
 
 }
-.input {
+
+.input { /* clase del buscador para que se centre*/
     align-self: center;
 }
 .buscador {
@@ -42,31 +39,12 @@ body{
     background-color: rgba(227, 224, 224, 0.763);
 }
 .botonBuscador {
-    border-radius: 30px;
+    border-radius: 30px; /* Para que la forma sea cirular y no un cuadrado */
     padding: 7px;
     background-color: rgba(227, 224, 224, 0.763);
     font-family:Kollektif ;
-
-}
-.generopelis{
-    background-image:url(../img1/grad.png);
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-    font-family: AgrandirW;
-    font-weight: bolder;
-    padding: 10px;
-}
-.imagen{
-    width: 100%;
 }
 
-.gpeliculas{
-    display: flex;
-    flex-wrap: wrap ;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 1% 1% 3% 1%;
-}
 .pelicula{
     width: 250px;
     height: 150px;
@@ -76,37 +54,29 @@ body{
     justify-content: center;
     margin: 2px;
 }
-.pelicula:hover {
-    width: 270px;
-
+.imagen{
+    width: 100%;
 }
-.serie{
-    width: 250px;
-    height: 150px;
+.div{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 10px;
+    font-family: Kollektif;
+}
+.titulo{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-image: url(../img1/grad.png);
+    font-family: AgrandirW;
+    font-weight: bolder;
+    padding: 10px;
+}
+.resultado{
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
-    justify-content: center;
-    margin: 2px;
-}
-.serie:hover {
-    width: 270px;
-}
-.gseries{
-    display: flex;
-    flex-wrap: wrap ;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-around; 
     margin: 1% 1% 3% 1%;
-}
-
-.generoserie{
-background-image: url(../img1/grad.png);
-font-size: 20px;
-color: white;
-font-family: AgrandirW;
-font-weight: bolder;
-padding: 10px;
 }
 
 .footer {
