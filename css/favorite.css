@@ -21,13 +21,15 @@ body{
     color: rgb(255, 255, 255);  
     text-decoration: none;
     padding: 30px;
-
-
+    transition: color .5s;
+}
+.menu a:hover {
+    color: pink;
 }
 .menu {
     align-self: center;
-    padding: 50px;
-}
+    padding: 120px;
+}    
 .input {
     align-self: center;
 }
@@ -50,7 +52,8 @@ body{
     background-image: url(../img1/grad.png);
     font-family: AgrandirW;
     font-weight: bolder;
-}
+    padding: 10px;
+}   
 .favoritos {
     display: flex;
      flex-wrap: wrap;
@@ -69,6 +72,9 @@ body{
 }
 .imagenport{
     width: 100%;
+}
+.imagenport:hover {
+    width: 270px;
 }
 
 .titaño{

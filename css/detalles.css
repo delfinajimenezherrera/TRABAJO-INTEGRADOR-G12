@@ -15,18 +15,21 @@ body {
     align-self: center;
     font-family: AgrandirR ;
 }
-.menu { /* clase del manu de barras para que se centre*/
-    align-self: center;
-    padding: 50px;
-}
-.menu a { /* dentro de menu acceda al link */
+.menu a {
     font-size: 16px;
     font-family: Kollektif;
     color: rgb(255, 255, 255);  
     text-decoration: none;
-    padding: 30px; /* Para que se separen unos de otros */
-
+    padding: 30px;
+    transition: color .5s;
 }
+.menu a:hover {
+    color: pink;
+}
+.menu {
+    align-self: center;
+    padding: 120px;
+}    
 
 .input { /* clase del buscador para que se centre*/
     align-self: center;
@@ -54,6 +57,7 @@ body {
         align-items: center;
         height: 70vh;
         width: 100vw; /* Para que ocupe la pantalla entera y despues se pueda centrar*/
+        margin: 1% 1% 7% 1%;
     } 
 .cajagrande { 
     display: flex; /* Se mueven los items para el costado y no se van abajo*/

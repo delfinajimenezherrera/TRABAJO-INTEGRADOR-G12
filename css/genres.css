@@ -16,13 +16,12 @@ body{
     height: 100px;
     font-size: 10px;
     color: rgb(255, 255, 255);
+
 }
 .tit {
     align-self: center;
-}
-.menu { /* clase del manu de barras para que se centre*/
-    align-self: center;
-    padding: 50px;
+    font-family: AgrandirR;
+
 }
 .menu a {
     font-size: 16px;
@@ -30,8 +29,15 @@ body{
     color: rgb(255, 255, 255);  
     text-decoration: none;
     padding: 30px;
-
+    transition: color .5s;
 }
+.menu a:hover {
+    color: pink;
+}
+.menu {
+    align-self: center;
+    padding: 120px;
+}    
 .input {
     align-self: center;
 }
@@ -59,7 +65,10 @@ body{
 .imagen{
     width: 100%;
 }
+.container {
+    margin: 1% 1% 11% 1%;
 
+}
 .gpeliculas{
     display: flex;
     flex-wrap: wrap ;

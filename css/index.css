@@ -22,12 +22,16 @@ body{
     color: rgb(255, 255, 255);  
     text-decoration: none;
     padding: 30px;
-
+    transition: color .5s;
+}
+.menu a:hover {
+    color: pink;
 }
 .menu {
     align-self: center;
-    padding: 50px;
-}
+    padding: 120px;
+}    
+      
 .input {
     align-self: center;
 }

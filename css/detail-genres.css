@@ -24,18 +24,21 @@ body{
     align-self: center;
     font-family: AgrandirR;
 }
-.menu { /* clase del manu de barras para que se centre*/
-    align-self: center;
-    padding: 50px;
-}
 .menu a {
     font-size: 16px;
     font-family: Kollektif;
     color: rgb(255, 255, 255);  
     text-decoration: none;
     padding: 30px;
-
+    transition: color .5s;
 }
+.menu a:hover {
+    color: pink;
+}
+.menu {
+    align-self: center;
+    padding: 120px;
+}    
 .input {
     align-self: center;
 }
@@ -106,12 +109,15 @@ margin: 15px;
 .imagen{
     width: 100%;
 }
+.imagen:hover {
+    width: 270px;
+}
 .container{
         display: flex;
          flex-wrap: wrap;
          flex-direction: row;
          justify-content: space-around; 
-         margin: 1% 1% 18% 1%;
+         margin: 1% 1% 30% 1%;
         }
         
 .footer {
