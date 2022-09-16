@@ -133,3 +133,58 @@ body {
     font-family: AgrandirW;
     src: url(../tipografias/Agrandir-WideLight.ttf);
     }
+@media (max-width: 450px) {
+    .header {
+        display: flex;
+        height: 50px;
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+    }
+    .tit { /* clase del titulo para que se centre*/
+        align-self: center;
+        font-family: AgrandirR ;
+    }
+    .menu a {
+        font-size: 10px;
+        font-family: Kollektif;
+        color: rgb(255, 255, 255);  
+        text-decoration: none;
+        padding: 5px;
+        transition: color .5s;
+    }
+    .menu a:hover {
+        color: pink;
+    }
+    .menu {
+        align-self: center;
+        padding: 50px;
+    }    
+    
+    .input { /* clase del buscador para que se centre*/
+        align-self: center;
+    }
+    .buscador {
+        border-radius: 30px;
+        outline: none;
+        padding: 5px;
+        background-color: rgba(227, 224, 224, 0.763);
+    }
+    .botonBuscador {
+        border-radius: 30px; /* Para que la forma sea cirular y no un cuadrado */
+        padding: 7px;
+        background-color: rgba(227, 224, 224, 0.763);
+        font-family:Kollektif ;
+    }
+    .imgpelicula {
+        width: 300px;
+        border-radius: 30px; 
+    }
+    .estrellas {
+        width: 100px; 
+        margin: 0px 0px 20px;
+        font-size: 20px;
+        color: white;
+        font-family: Kollektif;  
+    }
+
+}

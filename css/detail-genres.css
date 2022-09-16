@@ -168,3 +168,6 @@ margin: 15px;
     font-family: AgrandirW;
     src: url(../tipografias/Agrandir-WideLight.ttf);
 }
+@media (max-width: 450px) {
+    
+}
