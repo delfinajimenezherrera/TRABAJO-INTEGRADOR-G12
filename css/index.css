@@ -73,6 +73,9 @@ body{
 .imagenport{
     width: 100%;
 }
+.imagenport:hover { /* Para que se agrande la foto cuando la seleccionas */
+    width: 270px;
+}
 
 .titaño{
     color: rgb(255, 255, 255);

@@ -58,29 +58,34 @@ body{
 }
 
 .accion{
-order: 1;
-align-self: flex-start;
-width: 250px;
-height: 150px;
-margin: 15px;
+    order: 1;
+    align-self: flex-start;
+    width: 250px;
+    height: 150px;
+    margin: 15px;
 }
 
 .crimen{
     order: 2;
     align-self: center;
     width: 250px;
-height: 150px;
-margin: 15px;
+    height: 150px;
+    margin: 15px;
 
+}
+.accion:hover { /* Para que se agrande la foto cuando la seleccionas */
+    width: 270px;
 }
 
 .ficcion{
     order: 3;
     align-self: center;
     width: 250px;
-height: 150px;
-margin: 15px;
-
+    height: 150px;
+    margin: 15px;
+}
+.ficcion:hover { /* Para que se agrande la foto cuando la seleccionas */
+    width: 270px;
 }
 .romantica{
     order: 4;
@@ -89,12 +94,18 @@ margin: 15px;
 height: 150px;
 margin: 15px;
 }
+.romantica:hover { /* Para que se agrande la foto cuando la seleccionas */
+    width: 270px;
+}
 .terror{
     order: 5;
     align-self: flex-start;
     width: 250px;
-height: 150px;
-margin: 15px;
+    height: 150px;
+    margin: 15px;
+}
+.terror:hover { /* Para que se agrande la foto cuando la seleccionas */
+    width: 200px;
 }
 
 .generoserie{
