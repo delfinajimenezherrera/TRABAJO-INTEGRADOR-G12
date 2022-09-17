@@ -167,3 +167,66 @@ body{
     font-family: AgrandirW;
     src: url(../tipografias/Agrandir-WideLight.ttf);
 }
+@media (max-width: 450px) {
+    .video-wrapper {
+       display: none;
+      }
+      video {
+       display: none;
+      }
+      .barras{
+    padding: 2px;
+    width: 100%;
+}
+.header { 
+    height: 80px;
+    font-size: 10px; 
+    width: 90%;
+    margin: 0px; 
+    padding: 0px;
+}
+.tit {
+   font-size: 15px;
+}
+.menu a {
+    font-size: 14px;
+    padding: 5px;  
+}
+.menu {
+    align-self: center;
+    padding: 30px;
+}         
+.buscador {
+    max-width: 20%;
+     padding: 1px;
+ }
+ .botonBuscador {
+     padding: 1px;
+     max-width: 50%;
+ }
+ .input {
+     width: 35%;
+ }
+.pelicula {
+    margin-bottom: 10%;
+}
+.series{
+    margin-bottom: 10%;
+}
+.peliculavis {
+    margin-bottom: 10%;
+}
+.footer {
+    font-size: 9px;
+    margin: 2px;
+    padding: 0px;
+    align-items: center;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    margin: 1px;
+}
+}
