@@ -48,36 +48,32 @@ body{
     font-family:Kollektif ;
 
 }
-.video-wrapper {
-    /* Telling our absolute positioned video to 
-    be relative to this element */
+.video-wrapper { /* el container del video */
     position: relative;
   
     width: 176vh;
     height: 570px;
   
-    /* Will not allow the video to overflow the 
-    container */
+    /* Propiedad para que el video no sobrepase el div */
     overflow: hidden;
   
-    /* Centering the container's content vertically 
-    and horizontally */
+    /* Centramos el contenedor */
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   video {
-    /** Simulationg background-size: cover */
+    /** Con esto se simula el efecto background image */
     object-fit: cover;
-    height: 100%;
     width: 100%;
+    height: 100%;
   
     position: absolute;
     top: 0;
     left: 0;
   }
-.barras{
+.barras{ 
     font-size: 20px;
     color: rgb(255, 255, 255);
     background-image: url(../img1/grad.png);
