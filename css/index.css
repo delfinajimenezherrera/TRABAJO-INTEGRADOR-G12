@@ -51,7 +51,7 @@ body{
 .video-wrapper { /* el container del video */
     position: relative;
   
-    width: 176vh;
+    width: 201vh;
     height: 570px;
   
     /* Propiedad para que el video no sobrepase el div */
