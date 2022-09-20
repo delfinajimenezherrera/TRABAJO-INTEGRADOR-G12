@@ -216,6 +216,9 @@ padding: 10px;
     .serie{
         margin-bottom: 10%;
     }
+    .container{
+         margin: 0% 1% 15% 1%;
+    }
     .footer {
         font-size: 9px;
         margin: 2px;

@@ -153,6 +153,9 @@ body{
          padding: 0px;
          align-items: center;
      }
+     .resultado{
+        margin: 0% 1% 20% 1%;
+     }
      ul {
          margin: 0px;
          padding: 0px;
