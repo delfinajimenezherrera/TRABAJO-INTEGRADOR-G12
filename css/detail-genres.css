@@ -60,7 +60,7 @@ body{
     be relative to this element */
     position: relative;
   
-    width: 187.3vh;
+    width: 201vh; 
     height: 490px;
   
     /* Will not allow the video to overflow the 
