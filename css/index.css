@@ -111,39 +111,6 @@ body{
     font-size: 10px;
     font-family: Kollektif;
 }
-.seriespop {
-    display: flex;
-     flex-wrap: wrap;
-     flex-direction: row;
-     justify-content: space-around; 
-     margin: 1% 1% 3% 1%;
-}
-.series{
-    width: 250px;
-    height: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    justify-content: center;
-    margin: 2px;
-}
-.masvisto {
-    display: flex;
-     flex-wrap: wrap;
-     flex-direction: row;
-     justify-content: space-around; 
-     margin: 1% 1% 3% 1%;
-}
-.peliculavis{
-    width: 250px;
-    height: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    justify-content: center;
-    margin: 2px;
-
-}
 .footer {
     width: 100%;
     font-size: 12px;
@@ -206,21 +173,15 @@ body{
 .pelicula {
     margin-bottom: 10%;
 }
-.series{
-    margin-bottom: 10%;
-}
-.peliculavis {
-    margin-bottom: 10%;
-}
 .footer {
     font-size: 9px;
     margin: 2px;
     padding: 0px;
     align-items: center;
 }
-ul {
-    margin: 0px;
-    padding: 0px;
+.peliculaspop{
+    flex-direction: column;
+    align-items: center;
 }
 body {
     margin: 1px;
