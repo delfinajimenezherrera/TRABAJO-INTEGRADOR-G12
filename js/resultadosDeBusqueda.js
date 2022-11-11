@@ -39,7 +39,7 @@ fetch(url)
     })
 
     let buscador = document.querySelector(".buscador");
-    let formulario = document.querySelector(".form");
+    let formulario = document.querySelector("form");
     let campoAEvaluar = document.querySelector("[name='busqueda']")
     let alert= document.querySelector(".alert")
 
