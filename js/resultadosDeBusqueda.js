@@ -54,7 +54,7 @@ fetch(url)
     // evaluamos el formulario con submit
     formulario.addEventListener("submit", function (evento){
         evento.preventDefault();
-        if(campoAEvaluar.value=""){
+        if(campoAEvaluar.value==""){
             alert.innerText= "No podes dejar vacio el campo"
         } else if (campoAEvaluar.value.length <3){
             alert.innerText= "Tenes que ingresar mas de 3 caracteres"
