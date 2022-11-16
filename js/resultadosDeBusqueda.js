@@ -64,4 +64,15 @@ fetch(url)
     
     })
 
-    
+
+    // Creamos texto para el resultado de la busqueda
+    //let campoA = queryStringToObject.get('busqueda'); 
+    //let infobuscada = document.querySelector('.barras')
+    //infobuscada.innerText = `"Resultados de busqueda para: ${campoA}"`;
+        //buscador.addEventListener('input', function(){
+            //infobuscada.innerText= '';
+
+            //})
+
+    document.querySelector(".barras").innerText= `"RESULTADO DE BUSQUEDA: ${campoAEvaluar}"`;
+    console.log(campoAEvaluar);
