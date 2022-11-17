@@ -5,7 +5,7 @@ let seleccionados= JSON.parse (recuperoStorage)
 let lista= document.querySelector(".favoritos")
 // Si el local storage está vacío, quiero indicarle al usuario que no hay favoritos seleccionados 
 //usar un condicional: si seleccionados no hay seleccionados → Quiero que le diga al usuario “no hay nada en favoritos”
-if (seleccionados != null (dos barras para arriba) seleccionados.lenght == 0) {
+if (seleccionados != null || seleccionados.lenght == 0) {
     lista.innerHTML = `<p>No hay favoritos seleccionados</p>`
 
 }

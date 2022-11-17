@@ -11,7 +11,9 @@ let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 const query = queryStringObj.get('busqueda');
 
-const url = `https://api.themoviedb.org/3/search/movie?api_key=15370bef1a25ea674deaaf70270ad202&language=en-US&query=${query}&page=1&include_adult=false`;
+let apiKey = `c8c96a59cf4e2e778a6bf46883490734`
+const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`;
+let container = document.querySelector(".peliculaspop");
 
 fetch(url)
     .then(function (response) {
@@ -20,7 +22,6 @@ fetch(url)
     .then(function (data) {
         console.log(data);
         let info = data.results;
-        let container = document.querySelector(".peliculaspop");
         let search='';
 
         for (let i=0; i<info.length; i++){
@@ -37,33 +38,6 @@ fetch(url)
     .catch(function (err) {
         console.log(err)
     })
-
-    let buscador = document.querySelector(".buscador");
-    let formulario = document.querySelector("form");
-    let campoAEvaluar = document.querySelector("[name='busqueda']")
-    let alert= document.querySelector(".alert")
-
-
-    //planteamos el eveento
-    //evaluamos lo que el usuario ingrese
-
-    campoAEvaluar.addEventListener("focus", function(){
-        alert.innerText = "estas completando el campo"
-    })
-
-    // evaluamos el formulario con submit
-    formulario.addEventListener("submit", function (evento){
-        evento.preventDefault();
-        if(campoAEvaluar.value==""){
-            alert.innerText= "No podes dejar vacio el campo"
-        } else if (campoAEvaluar.value.length <3){
-            alert.innerText= "Tenes que ingresar mas de 3 caracteres"
-        } else{
-            this.submit();
-        }
-    
-    })
-
 
     // Creamos texto para el resultado de la busqueda
     //let campoA = queryStringToObject.get('busqueda'); 
