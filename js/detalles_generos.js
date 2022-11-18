@@ -5,7 +5,8 @@ let urlDetalleGeneroSerie = `https://api.themoviedb.org/3/discover/tv?api_key=${
 //El listado de las películas o series pertenecientes al género que seleccionó. El end point para usar es "Discover". crear un if
 // El nombre del género. En caso de que no se encuentre el género o no exista, debe indicarse un mensaje de error. repetir lo de resultados de busqueda
 //Lista de películas o series con su foto y su nombre. Al clickear en cualquiera de las series/ películas debe redirigir al detalle (punto 4). check
-
+let barras= document.querySelector (".barras")
+//barras.innerText = `"Resultados de busqueda para: ${query}"`;
 
 let queryString = location.search //Caputramos qs
 let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
@@ -20,6 +21,9 @@ fetch (urlDetalleGeneroPeli)
     let finalHtml=""
     let info = data.results;
     console.log(info);
+    if (info.length === 0)  {
+        barras.innerText = `No existe el resultado para: ${query}`;
+    }
     for (let i=0; i<info.length; i++) {
         let titulo = info[i].title //vas agarrando dentro de la api, dependiendo de como se llame la seccion en la cual esta el titulo. Con el [i], se va modificando a medida que trascurre el id
         let fechaEstreno = info[i].release_date
@@ -46,4 +50,5 @@ fetch (urlDetalleGeneroPeli)
 })
 
 // el nombre de genero
+
 
