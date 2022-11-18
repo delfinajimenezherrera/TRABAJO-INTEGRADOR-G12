@@ -30,7 +30,7 @@ fetch(url)
         }
 
         for (let i=0; i<info.length; i++){
-            let imagen = info[i].poster_path
+            let imagen = info[i].poster_path;
             search += `<article>
             <img src="https://image.tmdb.org/t/p/w500/${imagen}">
             </article> `
