@@ -9,13 +9,13 @@ let contenidoTrack = document.querySelector(".peliculaspop")
 
 
 let favortios= []
-let recuperoStorage= localStorage.getItem ("favortitos")
+let recuperoStorage= localStorage.getItem ("favoritos")
 //trasnformar datos en un array de json
 if (recuperoStorage != null){
     favortios= JSON.parse(recuperoStorage);
 }
 //Capturar un elemento del dom que refiera a favoritos 
-let link= document.querySelector (".circuloFavoritos") //en detalles. html= habia una línea que habíamos creado para que pudiera ser evaluada (punto 5 línea 1) 
+let link= document.querySelector (".circuloFavoritos") 
 // Chequear que el id este en el array para poder cambiar el texto al usuario 
 //vamos a crear un condicional y si lo incluye hay que escribir el nombre con el cual lo guardamos y ponerle un inner text 
 if (favortios.includes (id)){
