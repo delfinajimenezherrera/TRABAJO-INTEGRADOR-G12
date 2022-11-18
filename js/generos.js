@@ -11,8 +11,8 @@ fetch(urlGenPe)
 .then(function (data) {
     console.log(data)
     let finalHtml="" //vacio para que se vaya rellenando a medida que pasa el for
-    let info = data.results;
-    for (let i=0; i<info.genres; i++) {
+    let info = data.genres;
+    for (let i=0; i<info.length; i++) {
         let nombre = info[i].name //vas agarrando dentro de la api, dependiendo de como se llame la seccion en la cual esta el titulo. Con el [i], se va modificando a medida que trascurre el id
         let id = info[i].id
 
@@ -24,6 +24,37 @@ fetch(urlGenPe)
         </article>`
     }
     genPe.innerHTML= finalHtml;
+    return data
+})
+
+.catch(function(error){
+    console.log(error)
+    return error
+})
+
+let genSerie = document.querySelector(".generoSerie");
+
+fetch(urlGenSe)
+.then(function(response){
+    return response.json()
+})
+
+.then(function (data) {
+    console.log(data)
+    let finalHtml="" //vacio para que se vaya rellenando a medida que pasa el for
+    let info = data.genres;
+    for (let i=0; i<info.length; i++) {
+        let nombre = info[i].name //vas agarrando dentro de la api, dependiendo de como se llame la seccion en la cual esta el titulo. Con el [i], se va modificando a medida que trascurre el id
+        let id = info[i].id
+
+    //ahora habria que poner que se modifique en la pagina HTML con el inner
+        finalHtml += `<a href="./detail-genres.html?idPersonaje=${id}">
+        <article class="pelicula">         
+                <h3 class ="titulos">${nombre} </h3>
+            </a>
+        </article>`
+    }
+    genSerie.innerHTML= finalHtml;
     return data
 })
 
