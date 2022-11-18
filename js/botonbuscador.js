@@ -10,16 +10,16 @@ let alert= document.querySelector(".alert")
 //evaluamos lo que el usuario ingrese
 
 campoAEvaluar.addEventListener("focus", function(){
-    alert.innerText = "estas completando el campo"
+    alert.innerText = "Estas completando el campo"
 })
 
 // evaluamos el formulario con submit
 formulario.addEventListener("submit", function (evento){
     evento.preventDefault();
     if(campoAEvaluar.value==""){
-        alert.innerText= "No podes dejar vacio el campo"
+        alert.innerText= "Ups! No podes dejar vacio el campo"
     } else if (campoAEvaluar.value.length <3){
-        alert.innerText= "Tenes que ingresar mas de 3 caracteres"
+        alert.innerText= "Ups! Tenes que ingresar mas de 3 caracteres"
     } else{
         this.submit();
     }
