@@ -20,7 +20,7 @@ fetch(urlPeliculasPopu)
     for (let i=0; i<5; i++) {
         let titulo = info[i].title //vas agarrando dentro de la api, dependiendo de como se llame la seccion en la cual esta el titulo. Con el [i], se va modificando a medida que trascurre el id
         let fechaEstreno = info[i].release_date
-        let imagen = info[i].poster_path
+        let imagen = info[i].backdrop_path
         let id = info[i].id
 
     //ahora habria que poner que se modifique en la pagina HTML con el inner
@@ -56,7 +56,7 @@ fetch(urlSeriesPopu)
     for (let i=0; i<5; i++) {
         let titulo = info[i].name
         let fechaEstreno = info[i].first_air_date
-        let imagen = info[i].poster_path
+        let imagen = info[i].backdrop_path
         let id = info[i].id
 
     //ahora habria que poner que se modifique en la pagina HTML
@@ -93,7 +93,7 @@ fetch(urlLoMasVistoPeli)
     for (let i=0; i<5; i++) {
         let titulo = info[i].title
         let fechaEstreno = info[i].release_date
-        let imagen = info[i].poster_path
+        let imagen = info[i].backdrop_path
         let id = info[i].id
 
     //ahora abria que poner que se modifique en la pagina HTML

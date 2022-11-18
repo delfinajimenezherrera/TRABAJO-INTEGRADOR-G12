@@ -11,15 +11,11 @@ let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let query = queryStringObj.get('busqueda'); //duda: cuando agrego el punto adelante, me toma el nombre pero se me van las imagenes de la api
 let barras= document.querySelector (".barras")
-barras.innerText = `"Resultados de busqueda para: ${query}"`;
-
-
-
-let query2 = queryStringObj.get('.busqueda'); //por eso tuve que agregar otra variable agregandole el punto pero todavia no entiendo porque se produce el error 
 let apiKey = `c8c96a59cf4e2e778a6bf46883490734`
-let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${query2}&page=1&include_adult=false`;
+let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`;
 let container = document.querySelector(".peliculaspop");
 
+barras.innerText = `"Resultados de busqueda para: ${query}"`;
 
 fetch(url)
     .then(function (response) {
@@ -29,9 +25,9 @@ fetch(url)
         console.log(data);
         let info = data.results;
         let search='';
-        //  if (info.title.includes(`${query}`) == false)  {
-            //barras.innerText = `"No existe el resultado para: ${query}"`;
-        //})
+        if (info.length === 0)  {
+            barras.innerText = `No existe el resultado para: ${query}`;
+        }
 
         for (let i=0; i<info.length; i++){
             let imagen = info[i].poster_path
