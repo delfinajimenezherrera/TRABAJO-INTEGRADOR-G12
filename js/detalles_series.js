@@ -43,11 +43,11 @@ button.addEventListener ("click", function(e) {
 let queryString= location.search; // capturo qs, le asigno ol con la prop location.search (quedan guardados los datos)
 let queryStringToObject= new URLSearchParams (queryString); // obj lit
 let id = queryStringToObject.get("idPersonaje");
-let detSerie = document.querySelector(".contenedorp")
-console.log (id)
 
- let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
+
+let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
 let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=en-US`;
+let detSerie = document.querySelector(".contenedorp")
 
 
 // guardamos en cada variable el elemento q capturamos
@@ -55,9 +55,9 @@ let imagen= document.querySelector(".imgserie");
 let titulo= document.querySelector(".titulos");
 let fecha= document.querySelector (".fechas");
 let genero= document.querySelector (".generos");
-let duracion= document.querySelector (".duracion");
+let duracion= document.querySelector (".tiempo");
 let calificacion= document.querySelector (".calificaciones");
-let sinopsis= document.querySelector(".sinopsis");
+let sinopsis= document.querySelector(".resumen");
 
 // fetch 
 fetch (urlDetalleSerie) // la info viene en formato json
@@ -81,5 +81,5 @@ fetch (urlDetalleSerie) // la info viene en formato json
     .catch(function (err) {
         console.log(err)
 
-        return error
+        return err
     })
