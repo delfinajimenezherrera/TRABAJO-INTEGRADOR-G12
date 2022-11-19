@@ -59,6 +59,16 @@ body {
         width: 100vw; /* Para que ocupe la pantalla entera y despues se pueda centrar*/
         margin: 1% 1% 7% 1%;
     } 
+    .contenedorp { /* Es la flex box que contiene todo*/
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        width: 100vw; /* Para que ocupe la pantalla entera y despues se pueda centrar*/
+        margin: 1% 1% 7% 1%;
+    } 
 .cajagrande { 
     display: flex; /* Se mueven los items para el costado y no se van abajo*/
     height: 50vh; /* Queda centrado en el medio*/

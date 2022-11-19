@@ -1,4 +1,4 @@
-let peliculaTitulo= document.querySelector(".titulos"); //capturas todos lso datos del html mediante su clase/id/etiquetas
+/* let peliculaTitulo= document.querySelector(".titulos"); //capturas todos lso datos del html mediante su clase/id/etiquetas
 let fotoPelicula= document.querySelector(".imagenport");
 let fechaDeEstreno= document.querySelector(".fecha");
 let contenidoTrack = document.querySelector(".peliculaspop")
@@ -37,33 +37,35 @@ button.addEventListener ("click", function(e) {
         button.innerText= "Sacar de favoritos";
     }
 
-})
+}) */
 
 //  capturo el DOM 
 let queryString= location.search; // capturo qs, le asigno ol con la prop location.search (quedan guardados los datos)
 let queryStringToObject= new URLSearchParams (queryString); // obj lit
-let serie = queryStringToObject.get("idPersonaje");
-let detSerie = document.querySelector(".contenedorpadre")
+let id = queryStringToObject.get("idPersonaje");
+let detSerie = document.querySelector(".contenedorp")
+console.log (id)
 
-let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
-let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=${apiKey}&language=en-US`;
+ let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
+let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=en-US`;
+
 
 // guardamos en cada variable el elemento q capturamos
 let imagen= document.querySelector(".imgserie");
 let titulo= document.querySelector(".titulos");
 let fecha= document.querySelector (".fechas");
 let genero= document.querySelector (".generos");
-let duracion= document.querySelector (".duracions");
-let calificacion= document.querySelector (".calificacions");
-let sinopsis= document.querySelector(".sinopsiss");
+let duracion= document.querySelector (".duracion");
+let calificacion= document.querySelector (".calificaciones");
+let sinopsis= document.querySelector(".sinopsis");
 
 // fetch 
 fetch (urlDetalleSerie) // la info viene en formato json
-    .then(function (response){
+    .then(function(response){
         return response.json // .json decodifica la info y la convierte en tipo de dato (array o obj, etc)
     })
 
-    .then(function(data){
+    .then(function (data) {
         console.log(data);
         imagen.src =  `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`;
         titulo.innerText= data.original_title; 
@@ -74,7 +76,6 @@ fetch (urlDetalleSerie) // la info viene en formato json
         duracion.innerText= `${data.runtime} Minutos`; 
         sinopsis.innerText= data.overview; 
         calificacion.innerText= `Calificacion: ${data.vote_average}`;
-
         return data
     })
     .catch(function (err) {
