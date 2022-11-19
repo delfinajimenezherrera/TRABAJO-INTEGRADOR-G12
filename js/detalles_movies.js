@@ -1,8 +1,10 @@
 let queryString= location.search;
 let queryStringToObject= new URLSearchParams (queryString);
 let id= queryStringToObject.get("idPersonaje");
+
 let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
 let urlDetalleMovie= `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
+
 let imagen= document.querySelector(".imgpelicula");
 let titulo= document.querySelector(".titulo");
 let fecha= document.querySelector (".fecha");

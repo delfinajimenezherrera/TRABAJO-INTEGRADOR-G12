@@ -40,10 +40,13 @@ button.addEventListener ("click", function(e) {
 })
 
 //  capturo el DOM 
-let queryString= location.search; // le asigno el objeto literal con la prop location.search (quedan guardados los datos)
-let queryStringToObject= new URLSearchParams (queryString);
-let serie = queryStringToObject.get("idPersonajes");
+let queryString= location.search; // capturo qs, le asigno ol con la prop location.search (quedan guardados los datos)
+let queryStringToObject= new URLSearchParams (queryString); // obj lit
+let serie = queryStringToObject.get("idPersonaje");
+let detSerie = document.querySelector(".contenedorpadre")
 
+let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
+let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=${apiKey}&language=en-US`;
 
 // guardamos en cada variable el elemento q capturamos
 let imagen= document.querySelector(".imgserie");
@@ -52,10 +55,7 @@ let fecha= document.querySelector (".fechas");
 let genero= document.querySelector (".generos");
 let duracion= document.querySelector (".duracions");
 let calificacion= document.querySelector (".calificacions");
-let sinposis= document.querySelector(".sinposiss");
-
-let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
-let urlDetalleSerie = ``;
+let sinopsis= document.querySelector(".sinopsiss");
 
 // fetch 
 fetch (urlDetalleSerie) // la info viene en formato json
@@ -65,17 +65,20 @@ fetch (urlDetalleSerie) // la info viene en formato json
 
     .then(function(data){
         console.log(data);
-        imagen.src=``;
+        imagen.src =  `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`;
         titulo.innerText= data.original_title; 
         fecha.innerText= data.release_date;
         for (i=0; i< data.genres.length; i++){
         genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres [i].id}"> ${data.genres[i].name}</a>`;
         }
         duracion.innerText= `${data.runtime} Minutos`; 
-        sinposis.innerText= data.overview; 
+        sinopsis.innerText= data.overview; 
         calificacion.innerText= `Calificacion: ${data.vote_average}`;
 
+        return data
     })
     .catch(function (err) {
         console.log(err)
+
+        return error
     })
