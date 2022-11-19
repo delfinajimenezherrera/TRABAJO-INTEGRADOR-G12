@@ -38,3 +38,10 @@ button.addEventListener ("click", function(e) {
     }
 
 })
+
+// declarar variables
+let queryString= location.search; // le asigno el objeto literal con la prop location.search (quedan guardados los datos)
+let queryStringToObject= new URLSearchParams (queryString);
+let id= queryStringToObject.get("idPersonaje");
+let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
+let urlDetalleSerie = ``;
