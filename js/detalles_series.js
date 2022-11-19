@@ -39,9 +39,43 @@ button.addEventListener ("click", function(e) {
 
 })
 
-// declarar variables
+//  capturo el DOM 
 let queryString= location.search; // le asigno el objeto literal con la prop location.search (quedan guardados los datos)
 let queryStringToObject= new URLSearchParams (queryString);
-let id= queryStringToObject.get("idPersonaje");
+let serie = queryStringToObject.get("idPersonajes");
+
+
+// guardamos en cada variable el elemento q capturamos
+let imagen= document.querySelector(".imgserie");
+let titulo= document.querySelector(".titulos");
+let fecha= document.querySelector (".fechas");
+let genero= document.querySelector (".generos");
+let duracion= document.querySelector (".duracions");
+let calificacion= document.querySelector (".calificacions");
+let sinposis= document.querySelector(".sinposiss");
+
 let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
 let urlDetalleSerie = ``;
+
+// fetch 
+fetch (urlDetalleSerie) // la info viene en formato json
+    .then(function (response){
+        return response.json // .json decodifica la info y la convierte en tipo de dato (array o obj, etc)
+    })
+
+    .then(function(data){
+        console.log(data);
+        imagen.src=``;
+        titulo.innerText= data.original_title; 
+        fecha.innerText= data.release_date;
+        for (i=0; i< data.genres.length; i++){
+        genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres [i].id}"> ${data.genres[i].name}</a>`;
+        }
+        duracion.innerText= `${data.runtime} Minutos`; 
+        sinposis.innerText= data.overview; 
+        calificacion.innerText= `Calificacion: ${data.vote_average}`;
+
+    })
+    .catch(function (err) {
+        console.log(err)
+    })
