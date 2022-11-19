@@ -1,6 +1,4 @@
-
-
-//  capturo el DOM 
+//capturo el dom
 let queryString= location.search; // capturo qs, le asigno ol con la prop location.search (quedan guardados los datos)
 let queryStringToObject= new URLSearchParams (queryString); // obj lit
 let id = queryStringToObject.get("idPersonaje");
@@ -8,6 +6,8 @@ let id = queryStringToObject.get("idPersonaje");
 
 let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
 let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=en-US`;
+let urlDondeVerS = `https://api.themoviedb.org/3/tv/${serie}/watch/providers?api_key=${apiKey}`;
+let urlRecom = `https://api.themoviedb.org/3/tv/${serie}/recommendations?api_key=${apiKey}&language=en-US&page=1`;
 let detSerie = document.querySelector(".contenedorp")
 
 
@@ -19,8 +19,9 @@ let genero= document.querySelector (".generos");
 let duracion= document.querySelector (".tiempo");
 let calificacion= document.querySelector (".calificaciones");
 let sinopsis= document.querySelector(".resumen");
+let portadaSerie = document.querySelector(".portadaSerie");
 
-// fetch 
+// fetch detalle serie
 fetch (urlDetalleSerie) // la info viene en formato json
     .then(function(response){
         return response.json // .json decodifica la info y la convierte en tipo de dato (array o obj, etc)
@@ -44,6 +45,42 @@ fetch (urlDetalleSerie) // la info viene en formato json
 
         return err
     })
+
+//fetch recomendaciones
+    fetch(urlRecom)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data)
+            let recomendaciones="";
+            for (i=0; i<3; i++){
+                console.log(data.results[i]);
+                //agregar img...etc Completar
+
+            }
+        recomendaciones.innerHTML=recomendaciones; // ?
+        return data
+        })
+        .catch(function (err) {
+            console.log(err)
+         return err })
+
+        let verRecom= false;
+
+        recom.addEventListener("click", function(r){
+            r.preventDefault();
+            if (verRecom){
+                recomendaciones.style.display="none";
+                recom.innerText="Ver Recomendaciones";
+                verRecom=false;
+            }
+            else{
+                recomendaciones.style.display="flex";
+                recom.innerText="No hay recomendaciones"
+                verRecom=true;
+            }
+        })
 
 
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
