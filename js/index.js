@@ -60,7 +60,7 @@ fetch(urlSeriesPopu)
         let id = info[i].id
 
     //ahora habria que poner que se modifique en la pagina HTML
-        finalHtml += `<a href="./detail- movie.html?idPersonaje=${id}">
+        finalHtml += `<a href="./detail-serie.html?idPersonaje=${id}">
         <article class="pelicula">
             <img class="imagenport" src="https://image.tmdb.org/t/p/w500/${imagen}">
             <div class= "titaño">

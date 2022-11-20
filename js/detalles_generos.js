@@ -75,7 +75,7 @@ fetch (generosSeries)
 })
 .then(function(respuesta){
     console.log(respuesta)
-let tituloGeneros = document.querySelector(".titulogenseries");
+let tituloGeneros = document.querySelector(".titulogen");
 console.log(tituloGeneros)
 for (let i=0; i<respuesta.genres.length; i++){
     if(id == respuesta.genres[i].id){
@@ -87,7 +87,7 @@ for (let i=0; i<respuesta.genres.length; i++){
 // URL
 let urlDetalleGeneroSerie =`https://api.themoviedb.org/3/discover/tv?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&with_genres=${id}&sort_by=popularity.desc`
 
-let detGenSerie = document.querySelector(".detalleGeneroSerie");
+let detGenSerie = document.querySelector(".detalleGeneroPeli");
 
 // Traemos series
 fetch (urlDetalleGeneroSerie)
@@ -100,8 +100,8 @@ fetch (urlDetalleGeneroSerie)
     console.log(info);
   
     for (let i=0; i<info.length; i++) {
-        let titulo = info[i].title //vas agarrando dentro de la api, dependiendo de como se llame la seccion en la cual esta el titulo. Con el [i], se va modificando a medida que trascurre el id
-        let fechaEstreno = info[i].release_date
+        let titulo = info[i].name //vas agarrando dentro de la api, dependiendo de como se llame la seccion en la cual esta el titulo. Con el [i], se va modificando a medida que trascurre el id
+        let fechaEstreno = info[i].first_air_date
         let imagen = info[i].backdrop_path
         let id = info[i].id
         
