@@ -56,9 +56,18 @@ fetch (urlDetalleSerie) // la info viene en formato json
             let recomendaciones="";
             for (i=0; i<3; i++){
                 console.log(data.results[i]);
-                //agregar img...etc Completar
+                imagen.src= `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`;
+                titulo.innerText= data.original_title; 
+                fecha.innerText= data.release_date;
+                for (i=0; i< data.genres.length; i++){
+                    genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres [i].pelicula}"> ${data.genres[i].name}</a>`;
+                }
+                duracion.innerText= `${data.runtime} Minutos`; 
+                sinposis.innerText= data.overview; 
+                calificacion.innerText= `Calificacion: ${data.vote_average}`;
 
             }
+
         recomendaciones.innerHTML=recomendaciones; // ?
         return data
         })
