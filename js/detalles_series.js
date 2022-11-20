@@ -1,11 +1,11 @@
 //capturo el dom
 let queryString= location.search; // capturo qs, le asigno ol con la prop location.search (quedan guardados los datos)
-let queryStringToObject= new URLSearchParams (queryString); // obj lit
-let id = queryStringToObject.get("idPersonaje");
+let queryStringToObject= new URLSearchParams(queryString); // obj lit
+let serie = queryStringToObject.get('idPersonaje');
 
 
 let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
-let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=en-US`;
+let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=${apiKey}&language=en-US`;
 let urlDondeVerS = `https://api.themoviedb.org/3/tv/${serie}/watch/providers?api_key=${apiKey}`;
 let urlRecom = `https://api.themoviedb.org/3/tv/${serie}/recommendations?api_key=${apiKey}&language=en-US&page=1`;
 let detSerie = document.querySelector(".contenedorp")
@@ -33,7 +33,7 @@ fetch (urlDetalleSerie) // la info viene en formato json
         titulo.innerText= data.original_title; 
         fecha.innerText= data.release_date;
         for (i=0; i< data.genres.length; i++){
-        genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres [i].id}"> ${data.genres[i].name}</a>`;
+        genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres [i].serie}"> ${data.genres[i].name}</a>`;
         }
         duracion.innerText= `${data.runtime} Minutos`; 
         sinopsis.innerText= data.overview; 
@@ -94,26 +94,26 @@ if (recuperoStorage != null){
 let button = document.querySelector(".botonFavs") 
 // Chequear que el id este en el array para poder cambiar el texto al usuario 
 //vamos a crear un condicional y si lo incluye hay que escribir el nombre con el cual lo guardamos y ponerle un inner text 
-if (favortios_series.includes (id)){
+if (favortios_series.includes (serie)){
     button.innerHTML= "Sacar de favoritos"
 }
 // Cuando el usuario haga clic en agregar a favoritos → agregue ese id dentro del array 
 button.addEventListener ("click", function(e) {
         //comportamiento por default
     e.defaultPrevented();
-    if (favortios_series.includes(id)){
+    if (favortios_series.includes(serie)){
         // Si lo incluye: lo que tiene que hacer es sacarlo
             //1. Buscar la posición en la cual está el id y después borrarla (línea 60)
             //2.Poner el texto: agregar a favoritos 
 
-        let indice= favortios_series.indexOf (id);
+        let indice= favortios_series.indexOf (serie);
         favortios_series.splice (indice,1);
         button.innerText= "Agregar a favoritos";    
     }
     else {
         //SI el id no lo incluye: hay que agregarlo 
-        favortios_series.push (id); 
-        console.log(favortios_series );
+        favortios_series.push (serie); 
+        console.log(favortios_series);
         button.innerText= "Sacar de favoritos";
     }
     let pasarAString= JSON.stringify(favortios_series);

@@ -1,9 +1,9 @@
 let queryString= location.search;
 let queryStringToObject= new URLSearchParams (queryString);
-let id= queryStringToObject.get("idPersonaje");
+let pelicula= queryStringToObject.get('idPersonaje');
 
 let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
-let urlDetalleMovie= `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
+let urlDetalleMovie= `https://api.themoviedb.org/3/movie/${pelicula}?api_key=${apiKey}&language=en-US`;
 let contenedor = document.querySelector(".contenedorpadre")
 
 let imagen= document.querySelector(".imgpelicula");
@@ -25,7 +25,7 @@ fetch(urlDetalleMovie)
         titulo.innerText= data.original_title; 
         fecha.innerText= data.release_date;
         for (i=0; i< data.genres.length; i++){
-            genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres [i].id}"> ${data.genres[i].name}</a>`;
+            genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres [i].pelicula}"> ${data.genres[i].name}</a>`;
         }
         duracion.innerText= `${data.runtime} Minutos`; 
         sinposis.innerText= data.overview; 
@@ -47,25 +47,25 @@ let button = document.querySelector(".botonFavs");
 //Capturar un elemento del dom que refiera a favoritos 
 // Chequear que el id este en el array para poder cambiar el texto al usuario 
 //vamos a crear un condicional y si lo incluye hay que escribir el nombre con el cual lo guardamos y ponerle un inner text 
-if (favortios.includes (id)){
+if (favortios.includes (pelicula)){
     button.innerText= "Sacar de favoritos"
 }
 // Cuando el usuario haga clic en agregar a favoritos → agregue ese id dentro del array 
 button.addEventListener ("click", function(e) {
         //comportamiento por default
     e.defaultPrevented();
-    if (favortios.includes(id)){
+    if (favortios.includes(pelicula)){
         // Si lo incluye: lo que tiene que hacer es sacarlo
             //1. Buscar la posición en la cual está el id y después borrarla (línea 60)
             //2.Poner el texto: agregar a favoritos 
 
-        let indice= favortios.indexOf(id);
+        let indice= favortios.indexOf(pelicula);
         favortios.splice (indice,1);
         button.innerText= "Agregar a favoritos";    
     }
     else {
         //SI el id no lo incluye: hay que agregarlo 
-        favortios.push (id); 
+        favortios.push (pelicula); 
         console.log(favortios);
         button.innerText= "Sacar de favoritos";
     }
