@@ -21,6 +21,7 @@ console.log (error)
 })
 
 let mostrarRec = false;
+let recomendarSerie = document.querySelector(".recomendarSerie")
 
 recomendarSerie.addEventListener("click", function(r){
     r.preventDefault();
@@ -30,7 +31,7 @@ recomendarSerie.addEventListener("click", function(r){
     }})
   
 
-    //aca es el de ej
+    /* //aca es el de ej
     let similares = document.querySelector(".peliculas")
     let urlSimilares = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${api_key}&language=es-ES&page=1`
 
@@ -63,3 +64,4 @@ recomendarSerie.addEventListener("click", function(r){
     .catch(function(error){
         console.log('El error fue: ', error);
     })
+ */
