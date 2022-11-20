@@ -42,8 +42,9 @@ let recuperoStorage= localStorage.getItem("favoritos")
 if (recuperoStorage != null){
     favortios= JSON.parse(recuperoStorage);
 }
+let button = document.querySelector(".botonFavs"); 
+
 //Capturar un elemento del dom que refiera a favoritos 
-let button = document.querySelector(".botonFavs") 
 // Chequear que el id este en el array para poder cambiar el texto al usuario 
 //vamos a crear un condicional y si lo incluye hay que escribir el nombre con el cual lo guardamos y ponerle un inner text 
 if (favortios.includes (id)){
@@ -58,14 +59,14 @@ button.addEventListener ("click", function(e) {
             //1. Buscar la posición en la cual está el id y después borrarla (línea 60)
             //2.Poner el texto: agregar a favoritos 
 
-        let indice= favortios.indexOf (id);
+        let indice= favortios.indexOf(id);
         favortios.splice (indice,1);
         button.innerText= "Agregar a favoritos";    
     }
     else {
         //SI el id no lo incluye: hay que agregarlo 
         favortios.push (id); 
-        console.log(favortios );
+        console.log(favortios);
         button.innerText= "Sacar de favoritos";
     }
     let pasarAString= JSON.stringify(favortios);
