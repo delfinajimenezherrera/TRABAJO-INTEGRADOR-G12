@@ -81,6 +81,22 @@ body{
     font-weight: bolder;
     padding: 10px;
 }   
+.titulogen{ 
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-image: url(../img1/grad.png);
+    font-family: AgrandirW;
+    font-weight: bolder;
+    padding: 10px;
+}   
+.titulogenserie{ 
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-image: url(../img1/grad.png);
+    font-family: AgrandirW;
+    font-weight: bolder;
+    padding: 10px;
+}   
 .peliculaspop {
    display: flex;
     flex-wrap: wrap;
