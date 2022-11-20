@@ -6,8 +6,7 @@ let serie = queryStringToObject.get('idPersonaje');
 
 let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US`;
 let urlDondeVerS = `https://api.themoviedb.org/3/tv/${serie}/watch/providers?api_key=c8c96a59cf4e2e778a6bf46883490734`;
-let urlRecom = `https://api.themoviedb.org/3/tv/${serie}/recommendations?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&page=1`;
-let detSerie = document.querySelector(".contenedorp")
+let detSerie = document.querySelector(".contenedorpadre")
 
 
 console.log (urlDetalleSerie)
@@ -37,7 +36,7 @@ fetch (urlDetalleSerie) // la info viene en formato json
         for (i=0; i< data.genres.length; i++){
              genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres[i].serie}">${data.genres[i].name}</a>`;
         }
-        duracion.innerText= `${data.runtime} Minutos`; 
+        duracion.innerText= `${data.episode_run_time} Minutos`; 
         sinopsis.innerText= data.overview; 
         calificacion.innerText= `Calificacion: ${data.vote_average}`;
         return data
@@ -49,21 +48,23 @@ fetch (urlDetalleSerie) // la info viene en formato json
     })
 
 //fetch recomendaciones
+let urlRecom = `https://api.themoviedb.org/3/tv/${serie}/recommendations?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&page=1`;
+
 fetch(urlRecom)
 .then(function(response){
     return response.json()
 })
-.then(function(data){
-    console.log(data)
+.then(function(respuesta){
+    console.log(respuesta)
 
     let recomendaciones="";
 
     for (i=0; i<3; i++){
-        console.log(data.results[i]);
-        imagen.src= `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`;
-        titulo.innerText= data.original_name; 
-        fecha.innerText= data.first_air_date  ;
-        for (i=0; i< data.genres.length; i++){
+        console.log(respuesta.results[i]);
+        imagen.src= `https://image.tmdb.org/t/p/w500/${respuesta.backdrop_path}`;
+        titulo.innerText= respuesta.original_name; 
+        fecha.innerText= respuesta.first_air_date  ;
+        for (i=0; i< respuesta.genres.length; i++){
             genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres [i].pelicula}"> ${data.genres[i].name}</a>`;
         }
         duracion.innerText= `${data.runtime} Minutos`; 
@@ -93,7 +94,7 @@ recomendaciones.addEventListener("click", function(r){
         recomendaciones.innerText="No hay recomendaciones"
         recom=true;
     }
-})
+}) 
 
 
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
