@@ -42,3 +42,35 @@ function buscarfavoritos (id){
                         </a>`
     })
 }
+//SEGUIIMOS CON SERIES 
+// Si el local storage está vacío, quiero indicarle al usuario que no hay favoritos seleccionados 
+//usar un condicional: si seleccionados no hay seleccionados → Quiero que le diga al usuario “no hay nada en favoritos”
+if (seleccionados2 != null || seleccionados2.lenght == 0) {
+    lista2.innerHTML = `<p> No hay favoritos seleccionados </p>`
+
+}
+// Si hay seleccionados: pedir api los datos de todos los ids del array de personajes elegidos 
+else {
+    for (let i=0; i <seleccionados2.lenght;i++) {
+        buscarfavoritos= (seleccionados2 [i])
+    }
+}
+function buscarfavoritos (id){
+    let url= `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=en-US`
+    fecth (url)
+    .then (function(response){
+        return response.json()
+    })
+    .then (function(data){
+        console.log(data)
+        let nombre= data.title
+        let dia= data.release_date
+        let imagen= data.poster_path 
+        let id= data.id 
+        seleccionados2.innerHTML += `<a href="./detail-serie.html?idPersonajes= ${id}">
+                        <p> Titulo: ${nombre} </p>
+                        <img src= "https://image.tmdb.org/t/p/w500/${imagen}" >
+                        <p> Fecha: ${dia} </p>
+                        </a>`
+    })
+}
