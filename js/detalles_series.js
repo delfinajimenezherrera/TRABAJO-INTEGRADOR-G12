@@ -46,55 +46,32 @@ fetch (urlDetalleSerie) // la info viene en formato json
 
         return error
     })
+    
+//recomendacioones fetch
+let urlRecomSerie = `https://api.themoviedb.org/3/tv/${serie}/recommendations?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&page=1`;
+let recomendaciones = document.querySelector(".series")
 
-//fetch recomendaciones
-let urlRecom = `https://api.themoviedb.org/3/tv/${serie}/recommendations?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&page=1`;
-
-fetch(urlRecom)
+fetch(urlRecomSerie)
 .then(function(response){
     return response.json()
 })
-.then(function(respuesta){
-    console.log(respuesta)
+.then(function(data){
+    console.log(data)
+    let info = data.results;
+    for (let i=0; i<3; i++) {
+        let titulo = info[i].name
+        let imagen = info[i].backdrop_path
+        let id = info[i].id
+}})
 
-    let recomendaciones="";
+let mostrarRec = false;
 
-    for (i=0; i<3; i++){
-        console.log(respuesta.results[i]);
-        imagen.src= `https://image.tmdb.org/t/p/w500/${respuesta.backdrop_path}`;
-        titulo.innerText= respuesta.original_name; 
-        fecha.innerText= respuesta.first_air_date  ;
-        for (i=0; i< respuesta.genres.length; i++){
-            genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres [i].pelicula}"> ${data.genres[i].name}</a>`;
-        }
-        duracion.innerText= `${data.runtime} Minutos`; 
-        sinposis.innerText= data.overview; 
-        calificacion.innerText= `Calificacion: ${data.vote_average}`;
-
-    }
-
-reco.innerHTML= recomendaciones;
-return data
-})
-.catch(function (error) {
-    console.log(error);
- return error })
-
-let recom= false;
-
-recomendaciones.addEventListener("click", function(r){
+recomendarSerie.addEventListener("click", function(r){
     r.preventDefault();
-    if (recom){
+    if (mostrarRec) {
         recomendaciones.style.display="none";
         recomendaciones.innerText="Ver Recomendaciones";
-        recom=false;
-    }
-    else{
-        recomendaciones.style.display="flex";
-        recomendaciones.innerText="No hay recomendaciones"
-        recom=true;
-    }
-}) 
+    }})
 
 
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
