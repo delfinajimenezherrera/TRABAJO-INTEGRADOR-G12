@@ -35,6 +35,8 @@ fetch(urlDetalleMovie)
     .catch(function (err) {
         console.log(err)
     })
+
+
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
 let favortios= []
 let recuperoStorage= localStorage.getItem("favoritos")
