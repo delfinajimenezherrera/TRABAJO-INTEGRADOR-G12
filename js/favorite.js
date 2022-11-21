@@ -1,4 +1,4 @@
-let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
+let apiKey = "c8c96a59cf4e2e778a6bf46883490734"; //mi api generado con la cuenta
 //declarar una variable y ahí guardo con getitem lo que está guardado en la propiedad favoritos pelicula
 let recuperoStorageFav= localStorage.getItem ('favortios')
 let favortios= JSON.parse (recuperoStorageFav)
@@ -13,7 +13,7 @@ let lista2= document.querySelector(".favoritosserie")
 //EMPEZAMOS CON PELICULAS 
 // Si el local storage está vacío, quiero indicarle al usuario que no hay favoritos seleccionados 
 //usar un condicional: si seleccionados no hay seleccionados → Quiero que le diga al usuario “no hay nada en favoritos”
-if (favortios != null || favortios.lenght == 0) {
+if (favortios.lenght == 0 ||favortios != null) {
     lista1.innerHTML = `<p> No hay favoritos seleccionados </p>`
 
 }
@@ -32,17 +32,23 @@ else {
             let dia= data.release_date;
             let imagen= data.poster_path; 
             let id= data.id;
-            favortios_peli += `<a href="./detail-movie.html?idPersonaje= ${id}">
+            favortios_peli += ` <article class="portadaCard">
+                            <a href="./detail-movie.html?idPersonaje= ${id}">
                             <p> Titulo: ${nombre} </p>
                             <img src= "https://image.tmdb.org/t/p/w500/${imagen}" >
                             <p> Fecha: ${dia} </p>
-                            </a>`
+                            </a>
+                            </article>`
+                            
             lista1.innerHTML=favortios_peli
             return data
             })
+            .catch(function (error) {
+                console.log(error);
+                return error
+    })
         }
     }
-
     //SEGUIIMOS CON SERIES 
     // Si el local storage está vacío, quiero indicarle al usuario que no hay favoritos seleccionados 
     //usar un condicional: si seleccionados no hay seleccionados → Quiero que le diga al usuario “no hay nada en favoritos”
@@ -65,14 +71,20 @@ else {
             let dia= data.release_date
             let imagen= data.poster_path 
             let id= data.id 
-            favoritosserie += `<a href="./detail-serie.html?idPersonaje= ${id}">
+            favoritosserie += `<article class="portadaCard">
+                            <a href="./detail-serie.html?idPersonaje= ${id}">
                             <p> Titulo: ${nombre} </p>
                             <img src= "https://image.tmdb.org/t/p/w500/${imagen}" >
                             <p> Fecha: ${dia} </p>
-                            </a>`
+                            </a>
+                            </article>`
             lista2.innerHTML=favoritosserie
             return data
             })
+            .catch(function (error) {
+                console.log(error);
+                return error
+    })
         }
     }
-
+    

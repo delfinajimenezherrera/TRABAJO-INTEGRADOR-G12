@@ -1,4 +1,4 @@
-let apiKey = `c8c96a59cf4e2e778a6bf46883490734` //mi api generado con la cuenta
+let apiKey = "c8c96a59cf4e2e778a6bf46883490734" //mi api generado con la cuenta
 let urlGenPe = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`;
 let urlGenSe = `https://api.themoviedb.org/3/genre/tv/list?api_key=${apiKey}&language=en-US`;
 

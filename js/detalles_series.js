@@ -3,8 +3,8 @@ let queryString= location.search; // capturo qs, le asigno ol con la prop locati
 let queryStringToObject= new URLSearchParams(queryString); // obj lit
 let serie = queryStringToObject.get("idPersonaje");
 
-
-let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US`;
+let apiKey = "c8c96a59cf4e2e778a6bf46883490734"; //mi api generado con la cuenta
+let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=${apiKey}&language=en-US`;
 let urlDondeVerS = `https://api.themoviedb.org/3/tv/${serie}/watch/providers?api_key=c8c96a59cf4e2e778a6bf46883490734`;
 let detSerie = document.querySelector(".contenedorpadre")
 

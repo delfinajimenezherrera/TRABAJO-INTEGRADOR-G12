@@ -2,7 +2,7 @@ let queryString= location.search;
 let queryStringToObject= new URLSearchParams (queryString);
 let pelicula= queryStringToObject.get("idPersonaje");
 
-let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
+let apiKey = "c8c96a59cf4e2e778a6bf46883490734"; //mi api generado con la cuenta
 let urlDetalleMovie= `https://api.themoviedb.org/3/movie/${pelicula}?api_key=${apiKey}&language=en-US`;
 let contenedor = document.querySelector(".contenedorpadre")
 
@@ -69,7 +69,6 @@ button.addEventListener ("click", function(e) {
     else {
         //SI el id no lo incluye: hay que agregarlo 
         favortios.push (pelicula); 
-        console.log(favortios);
         button.innerText= "Sacar de favoritos";
     }
     let pasarAString= JSON.stringify(favortios);

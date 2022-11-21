@@ -1,4 +1,4 @@
-let apiKey = `c8c96a59cf4e2e778a6bf46883490734` //mi api generado con la cuenta
+let apiKey = "c8c96a59cf4e2e778a6bf46883490734" //mi api generado con la cuenta
 let urlPeliculasPopu = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
 let urlSeriesPopu = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=1`
 let urlLoMasVistoPeli= `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`

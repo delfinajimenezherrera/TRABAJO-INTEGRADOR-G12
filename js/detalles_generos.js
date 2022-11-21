@@ -1,4 +1,4 @@
-let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
+let apiKey = "c8c96a59cf4e2e778a6bf46883490734"; //mi api generado con la cuenta
 
 let queryString = location.search //Caputramos qs
 let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
