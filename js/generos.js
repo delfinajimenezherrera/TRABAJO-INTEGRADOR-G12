@@ -18,7 +18,7 @@ fetch(urlGenPe)
 
     //ahora habria que poner que se modifique en la pagina HTML con el inner
         finalHtml += `<a href="./detail-genres.html?idPersonaje=${id}">
-        <article class="peliculagen">         
+        <article class="gen">         
                 <h3 class ="titulosgenero">${nombre} </h3>
             </a>
         </article>`
@@ -49,7 +49,7 @@ fetch(urlGenSe)
 
     //ahora habria que poner que se modifique en la pagina HTML con el inner
         finalHtml += `<a href="./detail-genres.html?idPersonaje=${id}">
-        <article class="pelicula">         
+        <article class="gen">         
                 <h3 class ="titulosgenero">${nombre} </h3>
             </a>
         </article>`
