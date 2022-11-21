@@ -24,8 +24,8 @@ console.log (error)
 let recomendarSerie = document.querySelector(".recomendarSerie")
 
 
-recomendarSerie.addEventListener("click", function(r){
-    r.preventDefault();
+recomendarSerie.addEventListener("click", function(evento){
+    evento.preventDefault();
     if (recomendarSerie) {
         recomendaciones.style.display="none";
         recomendaciones.innerText="Ver Recomendaciones";
