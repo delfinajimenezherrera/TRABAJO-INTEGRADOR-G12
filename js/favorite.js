@@ -1,4 +1,4 @@
-let apiKey1 = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
+let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
 //declarar una variable y ahí guardo con getitem lo que está guardado en la propiedad favoritos pelicula
 let recuperoStorageFav= localStorage.getItem ('favortios')
 let favortios= JSON.parse (recuperoStorageFav)
@@ -21,7 +21,7 @@ if (favortios != null || favortios.lenght == 0) {
 else {
     let favortios_peli= " ";
     for (let i=0; i <favortios.lenght;i++) {    
-        let url= `https://api.themoviedb.org/3/tv/${favortios[i]}?api_key=${apiKey1}&language=en-US`
+        let url= `https://api.themoviedb.org/3/tv/${favortios[i]}?api_key=${apiKey}&language=en-US`
         fecth (url)
         .then (function(response){
             return response.json()
@@ -54,7 +54,7 @@ if (favortios_series != null || favortios_series.lenght == 0) {
 else {
     let favoritosserie= " ";
     for (let i=0; i <favortios_series.lenght;i++) {    
-        let url= `https://api.themoviedb.org/3/tv/${favortios_series[i]}?api_key=${apiKey1}&language=en-US`
+        let url= `https://api.themoviedb.org/3/tv/${favortios_series[i]}?api_key=${apiKey}&language=en-US`
         fecth (url)
         .then (function(response){
             return response.json()
