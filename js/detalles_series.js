@@ -5,7 +5,8 @@ let serie = queryStringToObject.get("idPersonaje");
 
 let apiKey = "c8c96a59cf4e2e778a6bf46883490734"; //mi api generado con la cuenta
 let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=${apiKey}&language=en-US`;
-let urlDondeVerS = `https://api.themoviedb.org/3/tv/${serie}/watch/providers?api_key=c8c96a59cf4e2e778a6bf46883490734`;
+let urlDondeVerSerie = `https://api.themoviedb.org/3/tv/${serie}/watch/providers?api_key=c8c96a59cf4e2e778a6bf46883490734`;
+let urlRecomSerie = `https://api.themoviedb.org/3/tv/${serie}/recommendations?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&page=1`;
 let detSerie = document.querySelector(".contenedorpadre")
 
 
@@ -19,8 +20,10 @@ let genero= document.querySelector (".generos");
 let duracion= document.querySelector (".tiempo");
 let calificacion= document.querySelector (".calificaciones");
 let sinopsis= document.querySelector(".resumen");
-let portadaSerie = document.querySelector(".portadaSerie");
-let button = document.querySelector(".botonFavs") 
+let portadaSerie = document.querySelector(".imgserie");
+let button = document.querySelector(".botonFavs");
+let verMas = document.querySelector(".verMas");
+let dondeVer = document.querySelector(".dondeVer");
 
 
 // fetch detalle serie
@@ -48,7 +51,28 @@ fetch (urlDetalleSerie) // la info viene en formato json
 
         return error
     })
-    
+   
+     //FETCH mostrar donde ver la serie
+     fetch(urlDondeVerSerie)
+     .then(function(response){
+         return response.json()
+     })
+     .then (function(data){
+         console.log( data)
+         let dondeVerSerie="";
+         for (let i=0; i< data.results.US.flatrate.length ; i++){
+             dondeVerSerie += `<li class= "dondeVer">${data.results.US.flatrate[i].provider_name}</li>`;
+         }
+         dondeVer.innerHTML+=dondeVerSerie;
+     })
+     .catch(function(error){
+         console.log(error);
+         return error
+     })
+
+    // FETCH RECOMENDACION*
+
+  
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
 let favortios_series= []
 let recuperoStorage= localStorage.getItem("favortios_series")

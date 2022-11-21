@@ -4,6 +4,7 @@ let pelicula= queryStringToObject.get("idPersonaje");
 
 let apiKey = "c8c96a59cf4e2e778a6bf46883490734"; //mi api generado con la cuenta
 let urlDetalleMovie= `https://api.themoviedb.org/3/movie/${pelicula}?api_key=${apiKey}&language=en-US`;
+let urlDondeVerPeli = `https://api.themoviedb.org/3/movie/${pelicula}/watch/providers?api_key=${apiKey}`;
 let contenedor = document.querySelector(".contenedorpadre")
 
 let imagen= document.querySelector(".imgpelicula");
@@ -14,6 +15,8 @@ let duracion= document.querySelector (".duracion");
 let calificacion= document.querySelector (".calificacion");
 let sinposis= document.querySelector(".sinposis");
 let button = document.querySelector(".botonFavs"); 
+let verMas = document.querySelector(".verMas");
+let dondeVer = document.querySelector(".dondeVer");
 
 
 
@@ -38,6 +41,25 @@ fetch(urlDetalleMovie)
         console.log(err)
     })
 
+    // FETCH mostrar donde ver la pelicula
+    fetch(urlDondeVerPeli)
+    .then(function(response){
+        return response.json()
+    })
+    .then (function(data){
+        console.log( data)
+        let dondeVerPelicula ="";
+        for (let i=0; i< data.results.US.flatrate.length; i++){
+            dondeVerPelicula += `<li class= "dondeVer">${data.results.US.flatrate[i].provider_name}</li>`;
+        }
+        dondeVer.innerHTML+=dondeVerPelicula;
+    })
+    .catch(function(error){
+        console.log(error);
+        return error
+    })
+
+// FETCH  RECOMENDACION!!*
 
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
 let favortios= []
