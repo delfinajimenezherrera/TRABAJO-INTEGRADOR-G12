@@ -17,11 +17,11 @@ fetch(urlGenPe)
         let id = info[i].id
 
     //ahora habria que poner que se modifique en la pagina HTML con el inner
-        finalHtml += `<a href="./detail-genres.html?idPersonaje=${id}">
-        <article class="gen">         
+        finalHtml += `<div class= "cajagen">
+        <a class= "angen" href="./detail-genres.html?idPersonaje=${id}">        
                 <h3 class ="titulosgenero">${nombre} </h3>
             </a>
-        </article>`
+        </div>`
     }
     genPe.innerHTML= finalHtml;
     return data
@@ -48,11 +48,11 @@ fetch(urlGenSe)
         let id = info[i].id
 
     //ahora habria que poner que se modifique en la pagina HTML con el inner
-        finalHtml += `<a href="./detail-genres.html?idPersonaje=${id}">
-        <article class="gen">         
+        finalHtml += `<div class= "cajagen">
+        <a class= "angen" href="./detail-genres-series.html?idPersonaje=${id}">        
                 <h3 class ="titulosgenero">${nombre} </h3>
             </a>
-        </article>`
+        </div>`
     }
     genSerie.innerHTML= finalHtml;
     return data
