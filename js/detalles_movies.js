@@ -1,6 +1,6 @@
 let queryString= location.search;
 let queryStringToObject= new URLSearchParams (queryString);
-let pelicula= queryStringToObject.get('idPersonaje');
+let pelicula= queryStringToObject.get("idPersonaje");
 
 let apiKey = `c8c96a59cf4e2e778a6bf46883490734`; //mi api generado con la cuenta
 let urlDetalleMovie= `https://api.themoviedb.org/3/movie/${pelicula}?api_key=${apiKey}&language=en-US`;
@@ -13,6 +13,8 @@ let genero= document.querySelector (".genero");
 let duracion= document.querySelector (".duracion");
 let calificacion= document.querySelector (".calificacion");
 let sinposis= document.querySelector(".sinposis");
+let button = document.querySelector(".botonFavs"); 
+
 
 
 fetch(urlDetalleMovie)
@@ -39,12 +41,11 @@ fetch(urlDetalleMovie)
 
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
 let favortios= []
-let recuperoStorage= localStorage.getItem("favoritos")
+let recuperoStorage= localStorage.getItem("favortios")
 //trasnformar datos en un array de json
 if (recuperoStorage != null){
     favortios= JSON.parse(recuperoStorage);
 }
-let button = document.querySelector(".botonFavs"); 
 
 //Capturar un elemento del dom que refiera a favoritos 
 // Chequear que el id este en el array para poder cambiar el texto al usuario 
@@ -55,7 +56,7 @@ if (favortios.includes (pelicula)){
 // Cuando el usuario haga clic en agregar a favoritos → agregue ese id dentro del array 
 button.addEventListener ("click", function(e) {
         //comportamiento por default
-    e.defaultPrevented();
+    e.preventDefault();
     if (favortios.includes(pelicula)){
         // Si lo incluye: lo que tiene que hacer es sacarlo
             //1. Buscar la posición en la cual está el id y después borrarla (línea 60)

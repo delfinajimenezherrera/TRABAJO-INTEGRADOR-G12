@@ -1,7 +1,7 @@
 //capturo el dom
 let queryString= location.search; // capturo qs, le asigno ol con la prop location.search (quedan guardados los datos)
 let queryStringToObject= new URLSearchParams(queryString); // obj lit
-let serie = queryStringToObject.get('idPersonaje');
+let serie = queryStringToObject.get("idPersonaje");
 
 
 let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US`;
@@ -20,6 +20,8 @@ let duracion= document.querySelector (".tiempo");
 let calificacion= document.querySelector (".calificaciones");
 let sinopsis= document.querySelector(".resumen");
 let portadaSerie = document.querySelector(".portadaSerie");
+let button = document.querySelector(".botonFavs") 
+
 
 // fetch detalle serie
 fetch (urlDetalleSerie) // la info viene en formato json
@@ -49,22 +51,21 @@ fetch (urlDetalleSerie) // la info viene en formato json
     
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
 let favortios_series= []
-let recuperoStorage= localStorage.getItem("favoritos_series")
+let recuperoStorage= localStorage.getItem("favortios_series")
 //trasnformar datos en un array de json
 if (recuperoStorage != null){
     favortios_series= JSON.parse(recuperoStorage);
 }
 //Capturar un elemento del dom que refiera a favoritos 
-let button = document.querySelector(".botonFavs") 
 // Chequear que el id este en el array para poder cambiar el texto al usuario 
 //vamos a crear un condicional y si lo incluye hay que escribir el nombre con el cual lo guardamos y ponerle un inner text 
 if (favortios_series.includes (serie)){
-    button.innerHTML= "Sacar de favoritos"
+    button.innerText= "Sacar de favoritos"
 }
 // Cuando el usuario haga clic en agregar a favoritos → agregue ese id dentro del array 
 button.addEventListener ("click", function(e) {
         //comportamiento por default
-    e.defaultPrevented();
+    e.preventDefault();
     if (favortios_series.includes(serie)){
         // Si lo incluye: lo que tiene que hacer es sacarlo
             //1. Buscar la posición en la cual está el id y después borrarla (línea 60)
