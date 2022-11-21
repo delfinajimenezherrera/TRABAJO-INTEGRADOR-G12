@@ -24,7 +24,7 @@ fetch(urlPeliculasPopu)
         let id = info[i].id
 
     //ahora habria que poner que se modifique en la pagina HTML con el inner
-        finalHtml += `<a href="./detail- movie.html?idPersonaje=${id}">
+        finalHtml += `<a class="borde" href="./detail- movie.html?idPersonaje=${id}">
         <article class="pelicula">
             <img class="imagenport" src="https://image.tmdb.org/t/p/w500/${imagen}">
             <div class= "titaño">
@@ -97,7 +97,7 @@ fetch(urlLoMasVistoPeli)
         let id = info[i].id
 
     //ahora abria que poner que se modifique en la pagina HTML
-        finalHtml += `<a href="./detail- movie.html?idPersonaje=${id}">
+        finalHtml += `<a class="borde" href="./detail- movie.html?idPersonaje=${id}">
         <article class="pelicula">
             <img class="imagenport" src="https://image.tmdb.org/t/p/w500/${imagen}">
             <div class= "titaño">

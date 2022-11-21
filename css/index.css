@@ -152,7 +152,8 @@ body{
     font-family: Kollektif;
 }
 a.borde{
-    background-color: aliceblue;
+    background-color: rgba(41, 43, 44, 0.668);
+    border-radius: 3%;
 }
 /* Generos */
 .titulosgenero{
