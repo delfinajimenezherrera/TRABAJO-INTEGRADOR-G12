@@ -82,8 +82,8 @@ fetch(urlVerMasSerie)
     for (let i=0; i<3; i++){
         console.log(data.results[i]);
         recomendaciones += `<article class="portada">
-        <a href="./detail_serie.html?idPersonajes=${data.results[i].id}">
-        <img class= "fotorecom" src= "https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}">
+        <a href="./detail-serie.html?idPersonajes=${data.results[i].id}">
+        <img class= "fotorecom" src= "https://image.tmdb.org/t/p/w500/${data.results[i].backdrop_path}">
         <p >  ${data.results[i].name}</p>
         <p> ${data.results[i].first_air_date}</p>
         </a>
