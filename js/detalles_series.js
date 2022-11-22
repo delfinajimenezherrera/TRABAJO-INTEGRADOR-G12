@@ -22,8 +22,8 @@ let calificacion= document.querySelector (".calificaciones");
 let sinopsis= document.querySelector(".resumen");
 let portadaSerie = document.querySelector(".imgserie");
 let button = document.querySelector(".botonFavs");
-let verMas = document.querySelector(".verMas");
-let dondeVer = document.querySelector(".dondeVer");
+let verMas = document.querySelector(".verMasSer");
+let dondeVer = document.querySelector(".dondeVerSer");
 let rec = document.querySelector(".recomendarSerie")
 
 
@@ -54,25 +54,27 @@ fetch (urlDetalleSerie) // la info viene en formato json
     })
    
      //FETCH mostrar donde ver la serie
+    
      fetch(urlDondeVerSerie)
      .then(function(response){
          return response.json()
      })
      .then (function(data){
-         console.log( data)
-         let dondeVerSerie="";
-         for (let i=0; i< data.results.length ; i++){
-             dondeVerSerie += `<li class= "dondeVer">${data.results[i].provider_name}</li>`;
+         console.log(data)
+         let dondeVer="";
+         for (let i=0; i< data.results; i++){
+             dondeVer += `<ul class= "dondeVerSer">${data.results[i].producer_companies}</ul>`;
          }
-         dondeVer.innerHTML+=dondeVerSerie;
+
+         dondeVer.innerHTML+=dondeVer
      })
      .catch(function(error){
          console.log(error);
          return error
      })
-/
+     
 //recomendacion
-fetch(urlVerMasSerie)
+  fetch(urlVerMasSerie)
 .then(function (respuesta) {
     return respuesta.json()
 })
@@ -98,20 +100,15 @@ fetch(urlVerMasSerie)
     return error
 })
 
-let mostrarRec = false;
+let mostrarParecidos = false;
 
 verMas.addEventListener("click", function(e) {
     e.preventDefault();
-    if (mostrarRec) {
+    if (mostrarParecidos) {
         rec.style.display="none";
-        verMas.innerText="Ver recomendaciones";
-        mostrarRec=false;
-    } else {
-        rec.style.display="flex";
-        verMas.innerText="Ocultar recomendaciones";
-        mostrarRec=true;
-
-    }
+        verMasSer.innerText="Ver recomendaciones";
+        mostrarParecidos=false;
+    } 
 }) 
    
 //favoritos

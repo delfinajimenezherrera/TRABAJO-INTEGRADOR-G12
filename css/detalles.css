@@ -225,7 +225,7 @@ body {
     }
 }
 /*js de detalles movies y series*/
-.dondeVer{ /* Para que aparezca las plataformas donde esta disponible la peli/seroe */
+.dondeVerSer{ /* Para que aparezca las plataformas donde esta disponible la peli/seroe */
     color: white;
     font-size: 16px;
     font-family: Kollektif;
@@ -240,7 +240,7 @@ body {
 
 .fotorecom{
     height: 24vh;
-    width: 35vh;
+    width: 40vh;
     border-radius: 25px;
     display: flex;
     flex-wrap: wrap;
@@ -253,6 +253,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: row;
+   
 
 }
 .recomendarPeli{
@@ -260,8 +261,15 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: row;
+   
 
 }
 .fotorecom:hover {
-    width: 280px;
+    width: 299px;
+}
+.dondeVer{
+    color: white;
+}
+.verMasSer{
+    color: white;
 }

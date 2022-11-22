@@ -50,8 +50,8 @@ fetch(urlDetalleMovie)
     .then (function(data){
         console.log( data)
         let dondeVerPelicula ="";
-        for (let i=0; i< data.results.US.flatrate.length; i++){
-            dondeVerPelicula += `<li class= "dondeVer"> ${data.results.US.flatrate[i].provider_name}</li>`
+        for (let i=0; i< data.results; i++){
+            dondeVerPelicula += `<li class= "dondeVer"> ${data.results[i].production_companies}</li>`
         }
         dondeVer.innerHTML+=dondeVerPelicula;
     })
@@ -61,7 +61,7 @@ fetch(urlDetalleMovie)
     })
 
 // FETCH  RECOMENDACION!!*
-fetch(urlVerMasPeli)
+ fetch(urlVerMasPeli)
 .then(function (respuesta) {
     return respuesta.json()
 })
@@ -101,7 +101,7 @@ verMas.addEventListener("click", function(e) {
         mostrarRec=true;
 
     }
-})
+}) 
 
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
 let favoritos=[]
