@@ -69,7 +69,7 @@ if (seriefav.length == 0 || seriefav==null){
                 let imagenes = data.poster_path
                 let id = data.id
                 let fecha = data.first_air_date    
-                seriesFavoritas += ` <a href="./detail_series.html?idPersonajes=${id}">
+                seriesFavoritas += ` <a class"bordegen"href="./detail_series.html?idPersonajes=${id}">
                 <img class= "imagenserie" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
                 <p class= "js" > Titulo: ${titulo}</p>
                 <p class= "js" >Fecha : ${fecha}</p>
