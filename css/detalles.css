@@ -130,9 +130,12 @@ body {
 }
 
 .gendet{
+    display: block;
+    
+    text-align: center;
     color: white;
     text-decoration: none;
-    padding: 5%;
+    padding: 3%;
     background-color: rgba(201, 191, 191, 0.265);
     margin: 4%;
 }

@@ -31,7 +31,7 @@ fetch(urlDetalleMovie)
         titulo.innerText= data.original_title; 
         fecha.innerText= data.release_date;
         for (i=0; i< data.genres.length; i++){
-            genero.innerHTML += `<a href="./detail-genres.html?id=${data.genres [i].pelicula}"> ${data.genres[i].name}</a>`;
+            genero.innerHTML += `<a class="gendet" href="./detail-genres.html?idPersonaje=${data.genres[i].id}"> ${data.genres[i].name}</a>`;
         }
         duracion.innerText= `${data.runtime} Minutos`; 
         sinposis.innerText= data.overview; 

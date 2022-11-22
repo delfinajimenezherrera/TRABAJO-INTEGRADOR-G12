@@ -40,7 +40,7 @@ fetch (urlDetalleSerie) // la info viene en formato json
         titulo.innerText= data.original_name; 
         fecha.innerText= data.first_air_date;
         for (i=0; i< data.genres.length; i++){
-             genero.innerHTML += `<a class="gendet" href="./detail-genres-series.html?id=${data.genres[i].serie}">${data.genres[i].name}</a>`;
+             genero.innerHTML += `<a class="gendet" href="detail-genres-series.html?idPersonaje=${data.genres[i].id}">${data.genres[i].name}</a>`;
         }
         duracion.innerText= `${data.episode_run_time} Minutos`; 
         sinopsis.innerText= data.overview; 

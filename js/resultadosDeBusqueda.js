@@ -30,10 +30,19 @@ fetch(url)
         }
 
         for (let i=0; i<info.length; i++){
-            let imagen = info[i].poster_path;
-            search += `<article>
-            <img src="https://image.tmdb.org/t/p/w500/${imagen}">
-            </article> `
+            let imagen = info[i].backdrop_path;
+            let titulo = info[i].title;
+            let fechaEstreno = info[i].release_date;
+            let id = info[i].id;
+            search += `<a class="borde" href="./detail- movie.html?idPersonaje=${id}">
+            <article class="pelicula">
+                <img class="imagenport" src="https://image.tmdb.org/t/p/w500/${imagen}">
+                <div class= "titaño">
+                    <h3 class ="titulos">${titulo} </h3>
+                    <h3 class="fecha"> ${fechaEstreno}</h3>
+                </div>
+                </a>
+            </article>`
 
         }
         container.innerHTML = search;
