@@ -50,8 +50,8 @@ fetch(urlDetalleMovie)
     .then (function(data){
         console.log( data)
         let dondeVerPelicula ="";
-        for (let i=0; i< data.results; i++){
-            dondeVerPelicula += `<li class= "dondeVer"> ${data.results[i].production_companies}</li>`
+        for (let i=0; i<  data.flatrate.length; i++){
+            dondeVerPelicula += `<li class= "dondeVer"> ${data.results.US.flatrate[i].producer_companies}</li>`
         }
         dondeVer.innerHTML+=dondeVerPelicula;
     })
@@ -70,15 +70,16 @@ fetch(urlDetalleMovie)
     let recomendaciones="";  
     for (let i=0; i<4; i++){
         console.log(data.results[i]);
-        recomendaciones += `<article class="portada">
-        <a href="./detail-movie.html?idPersonaje=${data.results[i].id}">
+        recomendaciones +=  `<article class="portada">
+        <a class="borde" href="./detail- movie.html?idPersonaje=${data.results[i].id}">
         <img class= "fotorecom" src= "https://image.tmdb.org/t/p/w500/${data.results[i].backdrop_path}">
-        <p > ${data.results[i].original_title}</p>
-        <p > ${data.results[i].release_date}</p>
+        <h3 class= "titulos"> ${data.results[i].original_title}</h3>
+        <h3 class = "fecha"> ${data.results[i].release_date}</h3>
         </a>
     </article>`
 
     }
+    
     rec.innerHTML=recomendaciones;
     return data
 })
@@ -88,6 +89,7 @@ fetch(urlDetalleMovie)
 })
 
 let mostrarRec = false;
+
 
 verMas.addEventListener("click", function(e) {
     e.preventDefault();

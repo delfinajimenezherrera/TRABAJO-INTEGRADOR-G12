@@ -62,7 +62,7 @@ fetch (urlDetalleSerie) // la info viene en formato json
      .then (function(data){
          console.log(data)
          let dondeVer="";
-         for (let i=0; i< data.results.flatrate.length ; i++){
+         for (let i=0; i< data.flatrate.length ; i++){
              dondeVer += `<ul class= "dondeVerSer">${data.results.US.flatrate[i].producer_companies}</ul>`;
          }
 
@@ -92,7 +92,7 @@ fetch (urlDetalleSerie) // la info viene en formato json
     </article>`
 
     }
-    rec.innerHTML=recomendaciones;
+    rec.innerHTML = recomendaciones;
     return data
 })
 .catch(function (error) {
@@ -106,7 +106,7 @@ verMas.addEventListener("click", function(e) {
     e.preventDefault();
     if (mostrarParecidos) {
         rec.style.display="none";
-        verMasSer.innerText="Ver recomendaciones";
+        verMas.innerText="Ver recomendaciones";
         mostrarParecidos=false;
     } 
 }) 
