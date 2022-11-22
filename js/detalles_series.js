@@ -107,7 +107,6 @@ verMas.addEventListener("click", function(e) {
     if (mostrarParecidos) {
         rec.style.display="none";
         verMas.innerText="Ver recomendaciones";
-        mostrarParecidos=false;
     } 
 }) 
    
