@@ -240,7 +240,7 @@ body {
 
 .fotorecom{
     height: 24vh;
-    width: 36vh;
+    width: 35vh;
     border-radius: 25px;
     display: flex;
     flex-wrap: wrap;
@@ -261,4 +261,7 @@ body {
     justify-content: space-between;
     flex-direction: row;
 
+}
+.fotorecom:hover {
+    width: 280px;
 }
