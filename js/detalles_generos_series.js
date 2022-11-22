@@ -13,13 +13,13 @@ let generosSeries = "https://api.themoviedb.org/3/genre/tv/list?api_key=c8c96a59
 .then(function(response){
     return response.json();
 })
-.then(function(respuesta){
-    console.log(respuesta)
+.then(function(res){
+    console.log(res)
 let tituloGeneros = document.querySelector(".titulogenserie");
 console.log(tituloGeneros)
-for (let i=0; i<respuesta.genres.length; i++){
-    if(id == respuesta.genres[i].id){
-        tituloGeneros.innerText = `Series de ${respuesta.genres[i].name} `
+for (let i=0; i<res.genres.length; i++){
+    if(id == res.genres[i].id){
+        tituloGeneros.innerText = `Series de ${res.genres[i].name} `
     }
 }
 }) 

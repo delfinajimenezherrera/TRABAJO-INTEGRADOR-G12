@@ -9,19 +9,19 @@ let generosPeli = "https://api.themoviedb.org/3/genre/movie/list?api_key=c8c96a5
 let detGenPe = document.querySelector(".detalleGeneroPeli");
 let titulo = document.querySelector(".titulogenpeli")
 
-// titulo en barras
+// titulo en barras que cambia
 
 fetch (generosPeli)
 .then(function(response){
     return response.json();
 })
-.then(function(respuesta){
-    console.log(respuesta)
+.then(function(rta){
+    console.log(rta)
 let tituloGeneros = document.querySelector(".titulogenpeli");
 console.log(tituloGeneros)
-for (let i=0; i<respuesta.genres.length; i++){
-    if(id == respuesta.genres[i].id){
-        tituloGeneros.innerText = `Peliculas de ${respuesta.genres[i].name} `
+for (let i=0; i<rta.genres.length; i++){
+    if(id == rta.genres[i].id){
+        tituloGeneros.innerText = `Peliculas de ${rta.genres[i].name} `
     }
 }
 })

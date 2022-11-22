@@ -182,15 +182,16 @@ a.borde{
 .generoPeli {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 2%;
     gap: 8px;
+    margin: 2%;
 }
 
 .generoSerie{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 2%;
     gap: 8px;
+    margin: 2%;
+    
 }
 
 .cajagen {
@@ -200,7 +201,7 @@ a.borde{
     border-radius: 10px;
 }
 .cajagen:hover {
-    opacity: 50%;
+    opacity: 55%;
 }
 
 
@@ -209,7 +210,6 @@ a.angen{
     text-align: center;
     font-size: 20px;
     text-transform: uppercase;
-    text-decoration: none;
 }
 
 
