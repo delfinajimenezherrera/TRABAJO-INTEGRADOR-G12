@@ -6,7 +6,7 @@ let serie = queryStringToObject.get("idPersonaje");
 let apiKey = "c8c96a59cf4e2e778a6bf46883490734"; //mi api generado con la cuenta
 let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=${apiKey}&language=en-US`;
 let urlDondeVerSerie = `https://api.themoviedb.org/3/tv/${serie}/watch/providers?api_key=c8c96a59cf4e2e778a6bf46883490734`;
-let urlRecomSerie = `https://api.themoviedb.org/3/tv/${serie}/recommendations?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&page=1`;
+let urlVerMasSerie = `https://api.themoviedb.org/3/tv/${serie}/recommendations?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&page=1`;
 let detSerie = document.querySelector(".contenedorpadre")
 
 
@@ -24,6 +24,7 @@ let portadaSerie = document.querySelector(".imgserie");
 let button = document.querySelector(".botonFavs");
 let verMas = document.querySelector(".verMas");
 let dondeVer = document.querySelector(".dondeVer");
+let rec = document.querySelector(".recomendarSerie")
 
 
 // fetch detalle serie
@@ -70,7 +71,50 @@ fetch (urlDetalleSerie) // la info viene en formato json
          return error
      })
 
-    // FETCH RECOMENDACION*
+//recomendacion
+fetch(urlVerMasSerie)
+.then(function (respuesta) {
+    return respuesta.json()
+})
+.then(function (data) {
+    console.log(data)
+    let recomendaciones="";  
+    for (let i=0; i<3; i++){
+        console.log(data.results[i]);
+        recomendaciones += `<article class="portada">
+        <a href="./detail_serie.html?idPersonajes=${data.results[i].id}">
+        <img class= "fotorecom" src= "https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}">
+        <p >  ${data.results[i].name}</p>
+        <p> ${data.results[i].first_air_date}</p>
+        </a>
+    </article>`
+
+    }
+    rec.innerHTML=recomendaciones;
+    return data
+})
+.catch(function (error) {
+    console.log(error);
+    return error
+})
+
+let mostrarRec = false;
+
+verMas.addEventListener("click", function(e) {
+    e.preventDefault();
+    if (mostrarRec) {
+        rec.style.display="none";
+        verMas.innerText="Ver recomendaciones";
+        mostrarRec=false;
+    } else {
+        rec.style.display="flex";
+        verMas.innerText="Ocultar recomendaciones";
+        mostrarRec=true;
+
+    }
+})
+   
+//favoritos
 
   
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
