@@ -15,18 +15,6 @@ body {
     align-self: center;
     font-family: AgrandirR ;
 }
-.dondeVer{ 
-    color: white;
-    font-size: 16px;
-    font-family: Kollektif;
-   margin-left: 20px;
-}
-.verMas{
-    color: white;
-    font-size: 16px;
-    font-family: Kollektif;
-    margin-left: 20px;
-}
 .menu a {
     font-size: 16px;
     font-family: Kollektif;
@@ -236,16 +224,41 @@ body {
         font-size: 16px;
     }
 }
-
+/*js de detalles movies y series*/
 .dondeVer{ /* Para que aparezca las plataformas donde esta disponible la peli/seroe */
     color: white;
     font-size: 16px;
     font-family: Kollektif;
-   margin-left: 20px;
+    
 }
 .verMas{ /* Para que solo se modifique las recomendaciones */
     color: white;
     font-size: 16px;
     font-family: Kollektif;
-    margin-left: 20px;
+    
+}
+
+.fotorecom{
+    height: 24vh;
+    width: 36vh;
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    flex-direction: row;
+}
+.recomendarSerie{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+.recomendarPeli{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+
 }

@@ -3,8 +3,8 @@ let queryString= location.search; // capturo qs, le asigno ol con la prop locati
 let queryStringToObject= new URLSearchParams(queryString); // obj lit
 let serie = queryStringToObject.get("idPersonaje");
 
-let apiKey = "c8c96a59cf4e2e778a6bf46883490734"; //mi api generado con la cuenta
-let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=${apiKey}&language=en-US`;
+
+let urlDetalleSerie = `https://api.themoviedb.org/3/tv/${serie}?api_key=c8c96a59cf4e2e778a6bf46883490734`;
 let urlDondeVerSerie = `https://api.themoviedb.org/3/tv/${serie}/watch/providers?api_key=c8c96a59cf4e2e778a6bf46883490734`;
 let urlVerMasSerie = `https://api.themoviedb.org/3/tv/${serie}/recommendations?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&page=1`;
 let detSerie = document.querySelector(".contenedorpadre")
@@ -61,8 +61,8 @@ fetch (urlDetalleSerie) // la info viene en formato json
      .then (function(data){
          console.log( data)
          let dondeVerSerie="";
-         for (let i=0; i< data.results.US.flatrate.length ; i++){
-             dondeVerSerie += `<li class= "dondeVer">${data.results.US.flatrate[i].provider_name}</li>`;
+         for (let i=0; i< data.results.length ; i++){
+             dondeVerSerie += `<li class= "dondeVer">${data.results[i].provider_name}</li>`;
          }
          dondeVer.innerHTML+=dondeVerSerie;
      })
@@ -70,7 +70,7 @@ fetch (urlDetalleSerie) // la info viene en formato json
          console.log(error);
          return error
      })
-
+/
 //recomendacion
 fetch(urlVerMasSerie)
 .then(function (respuesta) {
@@ -79,7 +79,7 @@ fetch(urlVerMasSerie)
 .then(function (data) {
     console.log(data)
     let recomendaciones="";  
-    for (let i=0; i<3; i++){
+    for (let i=0; i<4; i++){
         console.log(data.results[i]);
         recomendaciones += `<article class="portada">
         <a href="./detail-serie.html?idPersonajes=${data.results[i].id}">
@@ -112,7 +112,7 @@ verMas.addEventListener("click", function(e) {
         mostrarRec=true;
 
     }
-})
+}) 
    
 //favoritos
 

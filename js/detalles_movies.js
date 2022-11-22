@@ -51,7 +51,7 @@ fetch(urlDetalleMovie)
         console.log( data)
         let dondeVerPelicula ="";
         for (let i=0; i< data.results.US.flatrate.length; i++){
-            dondeVerPelicula += `<li class= "dondeVer">${data.results.US.flatrate[i].provider_name}</li>`;
+            dondeVerPelicula += `<li class= "dondeVer"> ${data.results.US.flatrate[i].provider_name}</li>`
         }
         dondeVer.innerHTML+=dondeVerPelicula;
     })
@@ -68,13 +68,13 @@ fetch(urlVerMasPeli)
 .then(function (data) {
     console.log(data)
     let recomendaciones="";  
-    for (let i=0; i<3; i++){
+    for (let i=0; i<4; i++){
         console.log(data.results[i]);
         recomendaciones += `<article class="portada">
         <a href="./detail-movie.html?idPersonajes=${data.results[i].id}">
         <img class= "fotorecom" src= "https://image.tmdb.org/t/p/w500/${data.results[i].backdrop_path}">
-        <p > ${data.results[i].name}</p>
-        <p > ${data.results[i].first_air_date}</p>
+        <p > ${data.results[i].original_title}</p>
+        <p > ${data.results[i].release_date}</p>
         </a>
     </article>`
 
