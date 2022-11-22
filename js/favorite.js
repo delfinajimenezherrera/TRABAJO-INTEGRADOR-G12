@@ -1,90 +1,89 @@
 let apiKey = "c8c96a59cf4e2e778a6bf46883490734"; //mi api generado con la cuenta
 //declarar una variable y ahí guardo con getitem lo que está guardado en la propiedad favoritos pelicula
-let recuperoStorageFav= localStorage.getItem ('favortios')
-let favortios= JSON.parse (recuperoStorageFav)
+let recuperoStorage=localStorage.getItem('favoritos');
+let favoritos = JSON.parse(recuperoStorage); 
 //declarar una variable y ahí guardo con getitem lo que está guardado en la propiedad favoritos pelicula
-let recuperoStorage2= localStorage.getItem ('favortios_series')
-let favortios_series= JSON.parse (recuperoStorage2)
+let recuperoStorageSeries=localStorage.getItem('seriefav'); /*metodo  que me dice que insertes la key como string, recupero la informacion en el local storage*/
+let seriefav = JSON.parse(recuperoStorageSeries);
 
 
 //Capturar el contenedor de html en favoritos 
-let lista1= document.querySelector(".favoritospeli")
-let lista2= document.querySelector(".favoritosserie")
+
+let lista1 = document.querySelector(".favoritospeli");
+let lista2 = document.querySelector(".favoritosserie")
 //EMPEZAMOS CON PELICULAS 
 // Si el local storage está vacío, quiero indicarle al usuario que no hay favoritos seleccionados 
 //usar un condicional: si seleccionados no hay seleccionados → Quiero que le diga al usuario “no hay nada en favoritos”
-if (favortios.lenght == 0 ||favortios != null) {
-    lista1.innerHTML = `<p> No hay favoritos seleccionados </p>`
-
-}
-    // Si hay seleccionados: pedir api los datos de todos los ids del array de personajes elegidos 
-else {
-    let favortios_peli= " ";
-    for (let i=0; i <favortios.lenght;i++) {    
-        let url= `https://api.themoviedb.org/3/tv/${favortios[i]}?api_key=${apiKey}&language=en-US`
-        fecth (url)
-        .then (function(response){
-            return response.json()
+if (favoritos.length == 0 || favoritos==null){
+    lista1.innerHTML = '<p>No hay lista de series favoritas aún</p>'
+    
+} else {
+    let peliculas = ''
+    for (let i = 0; i < favoritos.length; i++) {
+        let url = `https://api.themoviedb.org/3/movie/${favoritos[i]}?api_key=${apiKey}&language=en-US` /*Url donde busco los datos de mi pelicula */
+        /* Abro fetch para buscar la información de los personajes */
+        fetch(url)
+        .then (function (respuesta) {
+            return respuesta.json()
         })
-        .then (function(data){
+        .then(function (data){
             console.log(data)
-            let nombre= data.title;
-            let dia= data.release_date;
-            let imagen= data.poster_path; 
-            let id= data.id;
-            favortios_peli += ` <article class="portadaCard">
-                            <a href="./detail-movie.html?idPersonaje= ${id}">
-                            <p> Titulo: ${nombre} </p>
-                            <img src= "https://image.tmdb.org/t/p/w500/${imagen}" >
-                            <p> Fecha: ${dia} </p>
-                            </a>
-                            </article>`
-                            
-            lista1.innerHTML=favortios_peli
+            let id = data.id
+            let dia = data.release_date
+            let nombre = data.title
+            let imagenes = data.poster_path
+            peliculas += `<a href="./detail_movie.html?idPersonaje=${id}">
+                                    <img class= "portada" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
+                                    <p > Titulo: ${nombre}</p>
+                                    <p>Fecha : ${dia}</p>
+                                    </a>`
+                                
+            lista1.innerHTML=peliculas
+
             return data
-            })
-            .catch(function (error) {
-                console.log(error);
-                return error
-    })
-        }
+        })
+        .catch(function (error) {
+            console.log(error);
+            return error
+})
     }
+}
     //SEGUIIMOS CON SERIES 
     // Si el local storage está vacío, quiero indicarle al usuario que no hay favoritos seleccionados 
     //usar un condicional: si seleccionados no hay seleccionados → Quiero que le diga al usuario “no hay nada en favoritos”
-if (favortios_series != null || favortios_series.lenght == 0) {
-    lista2.innerHTML = `<p> No hay favoritos seleccionados </p>`
-
-}
-    // Si hay seleccionados: pedir api los datos de todos los ids del array de personajes elegidos 
-else {
-    let favoritosserie= " ";
-    for (let i=0; i <favortios_series.lenght;i++) {    
-        let url= `https://api.themoviedb.org/3/tv/${favortios_series[i]}?api_key=${apiKey}&language=en-US`
-        fecth (url)
-        .then (function(response){
-            return response.json()
-        })
-        .then (function(data){
-            console.log(data)
-            let nombre= data.title
-            let dia= data.release_date
-            let imagen= data.poster_path 
-            let id= data.id 
-            favoritosserie += `<article class="portadaCard">
-                            <a href="./detail-serie.html?idPersonaje= ${id}">
-                            <p> Titulo: ${nombre} </p>
-                            <img src= "https://image.tmdb.org/t/p/w500/${imagen}" >
-                            <p> Fecha: ${dia} </p>
-                            </a>
-                            </article>`
-            lista2.innerHTML=favoritosserie
-            return data
+if (seriefav.length == 0 || seriefav==null){
+    lista2.innerHTML = '<p>No hay lista de series favoritas aún</p>'
+        
+    } else {
+        let seriesFavoritas = ''
+        for (let i = 0; i < seriefav.length; i++) {
+            let urlSeries = `https://api.themoviedb.org/3/tv/${seriefav[i]}?api_key=${apiKey}&language=en-US` /*Url donde busco los datos de mi serie */
+            /* Abro fetch para buscar la información de los personajes */
+            fetch(urlSeries)
+            .then (function (respuesta) {
+                return respuesta.json()
             })
+            .then(function (data){
+                console.log(data)
+                let titulo = data.name
+                let imagenes = data.poster_path
+                let id = data.id
+                let fecha = data.first_air_date    
+                seriesFavoritas += `<article class="portadaCard">
+                <a href="./detail_series.html?idPersonajes=${id}">
+                <img class= "portada" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
+                <p > Titulo: ${titulo}</p>
+                <p>Fecha : ${fecha}</p>
+                </a>
+            </article>`
+            lista2.innerHTML=seriesFavoritas
+
+            return data
+})
             .catch(function (error) {
-                console.log(error);
-                return error
-    })
-        }
-    }
-    
+            console.log(error);
+            return error
+            })
+            }
+            }
+

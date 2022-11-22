@@ -62,41 +62,34 @@ fetch(urlDetalleMovie)
 // FETCH  RECOMENDACION!!*
 
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
-let favortios= []
-let recuperoStorage= localStorage.getItem("favortios")
-//trasnformar datos en un array de json
-if (recuperoStorage != null){
-    favortios= JSON.parse(recuperoStorage);
+let favoritos=[]
+
+let recuperoStorage = localStorage.getItem("favoritos")
+
+if (recuperoStorage != null) {
+    favoritos =  JSON.parse(recuperoStorage)
 }
 
-//Capturar un elemento del dom que refiera a favoritos 
-// Chequear que el id este en el array para poder cambiar el texto al usuario 
-//vamos a crear un condicional y si lo incluye hay que escribir el nombre con el cual lo guardamos y ponerle un inner text 
-if (favortios.includes (pelicula)){
-    button.innerText= "Sacar de favoritos"
+if (favoritos.includes(pelicula)) {
+    button.innerText = "Quitar de favoritos";
 }
-// Cuando el usuario haga clic en agregar a favoritos → agregue ese id dentro del array 
-button.addEventListener ("click", function(e) {
-        //comportamiento por default
+
+button.addEventListener("click", function(e) {
     e.preventDefault();
-    if (favortios.includes(pelicula)){
-        // Si lo incluye: lo que tiene que hacer es sacarlo
-            //1. Buscar la posición en la cual está el id y después borrarla (línea 60)
-            //2.Poner el texto: agregar a favoritos 
 
-        let indice= favortios.indexOf(pelicula);
-        favortios.splice (indice,1);
-        button.innerText= "Agregar a favoritos";    
+    if (favoritos.includes(pelicula)) {
+       let indice = favoritos.indexOf(pelicula)
+       favoritos.splice(indice, 1);
+       button.innerText = "Agregar a Favoritos";
+    }else{
+        favoritos.push(pelicula)
+        button.innerText = "Quitar de favoritos"
     }
-    else {
-        //SI el id no lo incluye: hay que agregarlo 
-        favortios.push (pelicula); 
-        button.innerText= "Sacar de favoritos";
-    }
-    let pasarAString= JSON.stringify(favortios);
-    localStorage.setItem("favoritos",pasarAString)
-    console.log (localStorage)
-}) 
+
+    let favsToString = JSON.stringify(favoritos);
+    localStorage.setItem("favoritos", favsToString )
+})
+
 
 
 
