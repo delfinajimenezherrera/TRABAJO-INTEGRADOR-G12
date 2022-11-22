@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+.titulofav{
+    color: #ffffff;  
+    font-family: AgrandirR;
+
+}
+.imagenserie{
+    width: 250px;
+    height: 250px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.imagenserie:hover { /* Para que se agrande la foto cuando la seleccionas */
+    width: 300px;
+    height: 300px;
+}
+
+.js {
+    color: #ffffff;  
+    font-family: Kollektif;
+
+}
+.favoritospeli{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around; 
+    margin: 1% 1% 5% 1%;
+
+
+}
+.favoritosserie{
+        display: flex;
+         flex-wrap: wrap;
+         flex-direction: row;
+         justify-content: space-around; 
+         margin: 1% 1% 5% 1%;
+     
+     
+}

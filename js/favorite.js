@@ -33,9 +33,9 @@ if (favoritos.length == 0 || favoritos==null){
             let nombre = data.title
             let imagenes = data.poster_path
             peliculas += `<a href="./detail_movie.html?idPersonaje=${id}">
-                                    <img class= "portada" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
-                                    <p > Titulo: ${nombre}</p>
-                                    <p>Fecha : ${dia}</p>
+                                    <img class= "imagenserie" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
+                                    <p class= "js"> Titulo: ${nombre}</p>
+                                    <p class= "js" >Fecha : ${dia}</p>
                                     </a>`
                                 
             lista1.innerHTML=peliculas
@@ -69,13 +69,12 @@ if (seriefav.length == 0 || seriefav==null){
                 let imagenes = data.poster_path
                 let id = data.id
                 let fecha = data.first_air_date    
-                seriesFavoritas += `<article class="portadaCard">
-                <a href="./detail_series.html?idPersonajes=${id}">
-                <img class= "portada" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
-                <p > Titulo: ${titulo}</p>
-                <p>Fecha : ${fecha}</p>
-                </a>
-            </article>`
+                seriesFavoritas += ` <a href="./detail_series.html?idPersonajes=${id}">
+                <img class= "imagenserie" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
+                <p class= "js" > Titulo: ${titulo}</p>
+                <p class= "js" >Fecha : ${fecha}</p>
+                </a>`
+            
             lista2.innerHTML=seriesFavoritas
 
             return data
