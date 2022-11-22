@@ -71,7 +71,7 @@ fetch(urlDetalleMovie)
     for (let i=0; i<4; i++){
         console.log(data.results[i]);
         recomendaciones += `<article class="portada">
-        <a href="./detail-movie.html?idPersonajes=${data.results[i].id}">
+        <a href="./detail-movie.html?idPersonaje=${data.results[i].id}">
         <img class= "fotorecom" src= "https://image.tmdb.org/t/p/w500/${data.results[i].backdrop_path}">
         <p > ${data.results[i].original_title}</p>
         <p > ${data.results[i].release_date}</p>

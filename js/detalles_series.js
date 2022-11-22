@@ -84,7 +84,7 @@ fetch (urlDetalleSerie) // la info viene en formato json
     for (let i=0; i<4; i++){
         console.log(data.results[i]);
         recomendaciones += `<article class="portada">
-        <a href="./detail-serie.html?idPersonajes=${data.results[i].id}">
+        <a href="./detail-serie.html?idPersonaje=${data.results[i].id}">
         <img class= "fotorecom" src= "https://image.tmdb.org/t/p/w500/${data.results[i].backdrop_path}">
         <p >  ${data.results[i].name}</p>
         <p> ${data.results[i].first_air_date}</p>
