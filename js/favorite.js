@@ -31,7 +31,7 @@ if (favoritos.length == 0 || favoritos==null){
             let id = data.id
             let dia = data.release_date
             let nombre = data.title
-            let imagenes = data.poster_path
+            let imagenes = data.backdrop_path
             peliculas += `<a href="./detail_movie.html?idPersonaje=${id}">
                                     <img class= "imagenserie" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
                                     <p class= "js"> Titulo: ${nombre}</p>
@@ -66,10 +66,10 @@ if (seriefav.length == 0 || seriefav==null){
             .then(function (data){
                 console.log(data)
                 let titulo = data.name
-                let imagenes = data.poster_path
+                let imagenes = data.backdrop_path
                 let id = data.id
                 let fecha = data.first_air_date    
-                seriesFavoritas += ` <a class"bordegen"href="./detail_series.html?idPersonajes=${id}">
+                seriesFavoritas += ` <a class"borde"href="./detail_series.html?idPersonajes=${id}">
                 <img class= "imagenserie" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
                 <p class= "js" > Titulo: ${titulo}</p>
                 <p class= "js" >Fecha : ${fecha}</p>
