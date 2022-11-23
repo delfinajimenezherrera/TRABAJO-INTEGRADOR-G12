@@ -122,6 +122,9 @@ body {
     text-align: center;
     color: grey;
 }
+.TMDB{
+    width: 10%;
+}
 
 .gendet{
     display: block;
