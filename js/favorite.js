@@ -15,7 +15,7 @@ let lista2 = document.querySelector(".favoritosserie")
 // Si el local storage está vacío, quiero indicarle al usuario que no hay favoritos seleccionados 
 //usar un condicional: si seleccionados no hay seleccionados → Quiero que le diga al usuario “no hay nada en favoritos”
 if (favoritos.length == 0 || favoritos==null){
-    lista1.innerHTML = '<p>No hay lista de series favoritas aún</p>'
+    lista1.innerHTML = '<p class="favorites">No hay lista de películas favoritas aún :(</p>'
     
 } else {
     let peliculas = ''
@@ -32,12 +32,17 @@ if (favoritos.length == 0 || favoritos==null){
             let dia = data.release_date
             let nombre = data.title
             let imagenes = data.backdrop_path
-            peliculas += `<a href="./detail_movie.html?idPersonaje=${id}">
-                                    <img class= "imagenserie" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
-                                    <p class= "js"> Titulo: ${nombre}</p>
-                                    <p class= "js" >Fecha : ${dia}</p>
-                                    </a>`
+            peliculas += `<a class="borde" href="./detail-serie.html?idPersonaje=${id}">
+            <article class="pelicula">
+                <img class="imagenport" src="https://image.tmdb.org/t/p/w500/${imagenes}">
+                <div class= "titaño">
+                    <h3 class ="titulos">${nombre} </h3>
+                    <h3 class="fecha"> ${dia}</h3>
+                </div>
+                </a>
+            </article>`
                                 
+                                    
             lista1.innerHTML=peliculas
 
             return data
@@ -52,7 +57,7 @@ if (favoritos.length == 0 || favoritos==null){
     // Si el local storage está vacío, quiero indicarle al usuario que no hay favoritos seleccionados 
     //usar un condicional: si seleccionados no hay seleccionados → Quiero que le diga al usuario “no hay nada en favoritos”
 if (seriefav.length == 0 || seriefav==null){
-    lista2.innerHTML = '<p>No hay lista de series favoritas aún</p>'
+    lista2.innerHTML = '<p class="favorit">No hay lista de series favoritas aún :(</p>'
         
     } else {
         let seriesFavoritas = ''
@@ -69,12 +74,16 @@ if (seriefav.length == 0 || seriefav==null){
                 let imagenes = data.backdrop_path
                 let id = data.id
                 let fecha = data.first_air_date    
-                seriesFavoritas += ` <a class"borde"href="./detail_series.html?idPersonajes=${id}">
-                <img class= "imagenserie" src= "https://image.tmdb.org/t/p/w500/${imagenes}">
-                <p class= "js" > Titulo: ${titulo}</p>
-                <p class= "js" >Fecha : ${fecha}</p>
-                </a>`
-            
+                seriesFavoritas +=  `<a class="borde" href="./detail-serie.html?idPersonaje=${id}">
+                <article class="pelicula">
+                    <img class="imagenport" src="https://image.tmdb.org/t/p/w500/${imagenes}">
+                    <div class= "titaño">
+                        <h3 class ="titulos">${titulo} </h3>
+                        <h3 class="fecha"> ${fecha}</h3>
+                    </div>
+                    </a>
+                </article>`
+
             lista2.innerHTML=seriesFavoritas
 
             return data
