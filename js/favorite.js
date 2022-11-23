@@ -32,7 +32,7 @@ if (favoritos.length == 0 || favoritos==null){
             let dia = data.release_date
             let nombre = data.title
             let imagenes = data.backdrop_path
-            peliculas += `<a class="borde" href="./detail-serie.html?idPersonaje=${id}">
+            peliculas += `<a class="borde" href="./detail- movie.html?idPersonaje=${id}">
             <article class="pelicula">
                 <img class="imagenport" src="https://image.tmdb.org/t/p/w500/${imagenes}">
                 <div class= "titaño">
