@@ -22,9 +22,9 @@ let calificacion= document.querySelector (".calificaciones");
 let sinopsis= document.querySelector(".resumen");
 let portadaSerie = document.querySelector(".imgserie");
 let button = document.querySelector(".botonFavs");
-let verMas = document.querySelector(".verMasSer");
-let dondeVer = document.querySelector(".dondeVerSer");
-let rec = document.querySelector(".recomendarSerie")
+let verMasSerie = document.querySelector(".verMasSer");
+let dondeVerSerie = document.querySelector(".dondeVerSer");
+let recom = document.querySelector(".recomendarSerie")
 
 
 // fetch detalle serie
@@ -66,7 +66,7 @@ fetch (urlDetalleSerie) // la info viene en formato json
              dondeVer += `<ul class= "dondeVerSer">${data.results.US.flatrate[i].producer_companies}</ul>`;
          }
 
-         dondeVer.innerHTML+=dondeVer
+         dondeVerSerie.innerHTML+=dondeVer
      })
      .catch(function(error){
          console.log(error);
@@ -92,7 +92,7 @@ fetch (urlDetalleSerie) // la info viene en formato json
     </article>`
 
     }
-    rec.innerHTML = recomendaciones;
+    recom.innerHTML = recomendaciones;
     return data
 })
 .catch(function (error) {
@@ -100,13 +100,12 @@ fetch (urlDetalleSerie) // la info viene en formato json
     return error
 })
 
-let mostrarParecidos = false;
+let mostrarRecomendaciones = "";
 
-verMas.addEventListener("click", function(e) {
+verMasSerie.addEventListener("click", function(e) {
     e.preventDefault();
-    if (mostrarParecidos) {
-        rec.style.display="none";
-        verMas.innerText="Ver recomendaciones";
+    if (mostrarRecomendaciones == true) {
+        verMasSerie.innerText="Ver recomendaciones";
     } 
 }) 
    

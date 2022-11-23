@@ -17,7 +17,7 @@ let calificacion= document.querySelector (".calificacion");
 let sinposis= document.querySelector(".sinposis");
 let button = document.querySelector(".botonFavs"); 
 let verMasPelis = document.querySelector(".verMasMovies");
-let dondeVerPeli = document.querySelector(".dondeVer");
+let dondeVerPeli = document.querySelector(".dondeVerPe");
 let recom = document.querySelector(".recomendarPeli")
 
 
@@ -93,7 +93,7 @@ let mostrarRecomend = "";
 
 verMasPelis.addEventListener("click", function(e) {
     e.preventDefault();
-    if (mostrarRecomend) {
+    if (mostrarRecomend == true) {
         verMasPelis.innerText="Ver recomendaciones";
     
     } 
