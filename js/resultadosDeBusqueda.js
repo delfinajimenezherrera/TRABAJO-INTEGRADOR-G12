@@ -17,7 +17,7 @@ let apiKey = "c8c96a59cf4e2e778a6bf46883490734"
 //let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`;
 //let url2= `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`; 
 let realUrl= `https://api.themoviedb.org/3/search/multi?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&query=${query}&page=1&include_adult=false`;
-let containerResults = document.querySelector(".peliculaspop");
+let container = document.querySelector(".peliculaspop");
 barras.innerText = `"Resultados de busqueda para: ${query}"`;
 
   
