@@ -16,7 +16,7 @@ let duracion= document.querySelector (".duracion");
 let calificacion= document.querySelector (".calificacion");
 let sinposis= document.querySelector(".sinposis");
 let button = document.querySelector(".botonFavs"); 
-let verMasPelis = document.querySelector(".verMas");
+let verMasPelis = document.querySelector(".verMasMovies");
 let dondeVerPeli = document.querySelector(".dondeVer");
 let recom = document.querySelector(".recomendarPeli")
 
@@ -52,7 +52,7 @@ fetch(urlDetalleMovie)
         console.log( data)
         let dondeVerPelicula ="";
         for (let i=0; i<  data.flatrate.length; i++){
-            dondeVerPelicula += `<li class= "dondeVer"> ${data.results.US.flatrate[i].producer_companies}</li>`
+            dondeVerPelicula += `<ul class= "dondeVerPe"> ${data.results.US.flatrate[i].producer_companies}</ul>`
         }
         dondeVerPeli.innerHTML+=dondeVerPelicula;
     })
