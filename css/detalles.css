@@ -114,13 +114,7 @@ body {
     width: 650px;
     border-radius: 30px; 
 }
-.estrellas {
-    width: 150px; 
-    margin: 0px 0px 20px;
-    font-size: 20px;
-    color: white;
-    font-family: Kollektif;  
-}
+
 .footer {
     width: 100%;
     font-size: 12px;
