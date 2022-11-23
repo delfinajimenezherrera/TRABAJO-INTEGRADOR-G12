@@ -51,8 +51,8 @@ fetch(urlDetalleMovie)
     .then (function(data){
         console.log( data)
         let dondeVerPelicula ="";
-        for (let i=0; i<  data.flatrate.length; i++){
-            dondeVerPelicula += `<ul class= "dondeVerPe"> ${data.results.US.flatrate[i].producer_companies}</ul>`
+        for (let i=0; i<  data.length; i++){
+            dondeVerPelicula += `<ul class= "dondeVerPe"> ${data.results[i].producer_companies}</ul>`
         }
         dondeVerPeli.innerHTML+=dondeVerPelicula;
     })
@@ -90,12 +90,10 @@ fetch(urlDetalleMovie)
 
 let mostrarRecomend = "";
 
-
 verMasPelis.addEventListener("click", function(e) {
     e.preventDefault();
     if (mostrarRecomend == true) {
         verMasPelis.innerText="Ver recomendaciones";
-    
     } 
 }) 
 

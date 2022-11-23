@@ -62,8 +62,8 @@ fetch (urlDetalleSerie) // la info viene en formato json
      .then (function(data){
          console.log(data)
          let dondeVer="";
-         for (let i=0; i< data.flatrate.length ; i++){
-             dondeVer += `<ul class= "dondeVerSer">${data.results.US.flatrate[i].producer_companies}</ul>`;
+         for (let i=0; i< data.length ; i++){
+             dondeVer += `<ul class= "dondeVerSer">${data.results[i].producer_companies}</ul>`;
          }
 
          dondeVerSerie.innerHTML+=dondeVer
