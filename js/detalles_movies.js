@@ -16,9 +16,10 @@ let duracion= document.querySelector (".duracion");
 let calificacion= document.querySelector (".calificacion");
 let sinposis= document.querySelector(".sinposis");
 let button = document.querySelector(".botonFavs"); 
-let verMas = document.querySelector(".verMas");
-let dondeVer = document.querySelector(".dondeVer");
-let rec = document.querySelector(".recomendarPeli")
+let verMasPelis = document.querySelector(".verMas");
+let dondeVerPeli = document.querySelector(".dondeVer");
+let recom = document.querySelector(".recomendarPeli")
+
 
 
 fetch(urlDetalleMovie)
@@ -53,7 +54,7 @@ fetch(urlDetalleMovie)
         for (let i=0; i<  data.flatrate.length; i++){
             dondeVerPelicula += `<li class= "dondeVer"> ${data.results.US.flatrate[i].producer_companies}</li>`
         }
-        dondeVer.innerHTML+=dondeVerPelicula;
+        dondeVerPeli.innerHTML+=dondeVerPelicula;
     })
     .catch(function(error){
         console.log(error);
@@ -73,14 +74,13 @@ fetch(urlDetalleMovie)
         recomendaciones +=  `<article class="portada">
         <a class="borde" href="./detail- movie.html?idPersonaje=${data.results[i].id}">
         <img class= "fotorecom" src= "https://image.tmdb.org/t/p/w500/${data.results[i].backdrop_path}">
-        <h3 class= "titulos"> ${data.results[i].original_title}</h3>
-        <h3 class = "fecha"> ${data.results[i].release_date}</h3>
+        <p> ${data.results[i].original_title}</p>
+        <p> ${data.results[i].release_date}</p>
         </a>
     </article>`
 
     }
-    
-    rec.innerHTML=recomendaciones;
+    recom.innerHTML=recomendaciones;
     return data
 })
 .catch(function (error) {
@@ -88,21 +88,15 @@ fetch(urlDetalleMovie)
     return error
 })
 
-let mostrarRec = false;
+let mostrarRecomend = "";
 
 
-verMas.addEventListener("click", function(e) {
+verMasPelis.addEventListener("click", function(e) {
     e.preventDefault();
-    if (mostrarRec) {
-        rec.style.display="none";
-        verMas.innerText="Ver recomendaciones";
-        mostrarRec=false;
-    } else {
-        rec.style.display="flex";
-        verMas.innerText="Ocultar recomendaciones";
-        mostrarRec=true;
-
-    }
+    if (mostrarRecomend) {
+        verMasPelis.innerText="Ver recomendaciones";
+    
+    } 
 }) 
 
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
