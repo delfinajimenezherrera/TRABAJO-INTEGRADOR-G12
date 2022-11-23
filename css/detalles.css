@@ -255,15 +255,20 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: row;
-   
+   margin-top: 270px;
+
 
 }
+p{
+    color: white;
+}
+
 .recomendarPeli{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: row;
-   
+   margin-top: 270px;
 
 }
 .fotorecom:hover {
