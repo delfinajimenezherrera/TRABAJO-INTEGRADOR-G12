@@ -100,7 +100,7 @@ fetch (urlDetalleSerie) // la info viene en formato json
     return error
 })
 
-let mostrarRecomendaciones = "";
+
 
 verMasSerie.addEventListener("click", function(reco) {
     reco.preventDefault();
