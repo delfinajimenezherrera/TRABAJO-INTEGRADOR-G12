@@ -57,7 +57,7 @@ body{
 .video-wrapper { /* el container del video */
     position: relative;
   
-    width: 201vh;
+    width: 100%;
     height: 570px;
   
     /* Propiedad para que el video no sobrepase el div */
@@ -138,6 +138,22 @@ a.bordegen{
     justify-content: space-around; 
     margin: 1% 1% 5% 1%;
 }
+.seriesspop {
+    display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     justify-content: space-around; 
+     margin: 1% 1% 5% 1%;
+ 
+ }
+ .lomasvisto {
+    display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     justify-content: space-around; 
+     margin: 1% 1% 6% 1%;
+ 
+ }
 .pelicula{
     width: 250px;
     height: 150px;
@@ -211,7 +227,40 @@ a.angen{
     font-size: 20px;
     text-transform: uppercase;
 }
+/* Favoritos */
+.titulofav{ 
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-image: url(../img1/grad.png);
+    font-family: AgrandirW;
+    font-weight: bolder;
+    padding: 10px;
+}   
+.favoritospeli{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around; 
+    margin: 1% 1% 5% 1%;
 
+
+}
+.favoritosserie{
+        display: flex;
+         flex-wrap: wrap;
+         flex-direction: row;
+         justify-content: space-around; 
+         margin: 1% 1% 5% 1%;
+     
+     
+}
+.favorites{
+    color: #ffffff;  
+    font-family: Kollektif;
+}
+.favorit{color: #ffffff;  
+    font-family: Kollektif;
+}
 
 /* Footer */
 
@@ -221,6 +270,9 @@ a.angen{
     font-family: AgrandirR ;
     text-align: center;
     color: grey;
+}
+.TMDB{
+    width: 10%;
 }
 
 /* Media */
@@ -279,6 +331,7 @@ a.angen{
  }
 .pelicula {
     margin-bottom: 10%;
+    padding: 5%;
 }
 .footer {
     font-size: 9px;
@@ -290,7 +343,41 @@ a.angen{
     flex-direction: column;
     align-items: center;
 }
+.seriesspop{ flex-direction: column;
+    align-items: center;
+}
+.lomasvisto{
+    flex-direction: column;
+    align-items: center;
+}
 body {
     margin: 1px;
 }
+
+.generoPeli {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+   
 }
+
+.generoSerie{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    
+    
+}
+.detalleGeneroSerie{
+    flex-direction: column;
+    align-items: center;
+
+}
+.detalleGeneroPeli{
+    flex-direction: column;
+    align-items: center;
+
+}}
+
+
+
+
+

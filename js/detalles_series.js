@@ -61,19 +61,19 @@ fetch (urlDetalleSerie) // la info viene en formato json
      })
      .then (function(data){
          console.log(data)
-         let dondeVer="";
+         let dondeVerlo="";
          for (let i=0; i< data.length ; i++){
-             dondeVer += `<ul class= "dondeVerSer">${data.results[i].producer_companies}</ul>`;
+             dondeVerlo += `<ul class= "dondeVerSer">${data.results[i].producer_companies}</ul>`;
          }
 
-         dondeVerSerie.innerHTML+=dondeVer
+         dondeVerSerie.innerHTML+=dondeVerlo
      })
      .catch(function(error){
          console.log(error);
          return error
      })
      
-//recomendacion
+//RECOMENDACION
   fetch(urlVerMasSerie)
 .then(function (respuesta) {
     return respuesta.json()
@@ -102,37 +102,42 @@ fetch (urlDetalleSerie) // la info viene en formato json
 
 let mostrarRecomendaciones = "";
 
-verMasSerie.addEventListener("click", function(e) {
-    e.preventDefault();
-    if (mostrarRecomendaciones == true) {
-        verMasSerie.innerText="Ver recomendaciones";
-    } 
+verMasSerie.addEventListener("click", function(reco) {
+    reco.preventDefault();
+    verMasSerie.innerText="Ver recomendaciones";
+    recom.style.display = "block";
 }) 
    
 //favoritos
 
   
 // un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
-let seriefav=[]
+let seriefav=[] // corchetes vacíos para ir completando los datos y guardar los favoritos
 
-let recuperoStorage = localStorage.getItem("seriefav")
+let recuperoStorage = localStorage.getItem("seriefav") //guardar en una variable los datos que quiero recuperar de un storage
 
-if (recuperoStorage != null) {
-    seriefav =  JSON.parse(recuperoStorage)
+
+//Preguntar con un condicional si recupero storage, no es nulo
+if (recuperoStorage != null) { 
+    seriefav =  JSON.parse(recuperoStorage) //Si hay algo guardado: quiero transformar el dato en formato json a un tipo de dato que podamos trabajar en jv 
 }
-
+//Chequear que el id este en el array para poder cambiar el texto al usuario 
 if (seriefav.includes(serie)) {
     button.innerText = "Quitar de favoritos";
 }
 
 button.addEventListener("click", function(e) {
     e.preventDefault();
+//Definir el evento para ese elemento del dom y evaluar si ya se agrego a el array usar condicinales 
+//Si lo incluye: lo que tiene que hacer es sacarlo: Buscar la posición en la cual está el id y después borrarla para poner el texto: agregar a favoritos 
 
     if (seriefav.includes(serie)) {
        let indice = seriefav.indexOf(serie)
        seriefav.splice(indice, 1);
        button.innerText = "Agregar a Favoritos";
-    }else{
+    }
+    //SI el id no lo incluye: hay que agregarlo 
+    else{
         seriefav.push(serie)
         button.innerText = "Quitar de favoritos"
     }

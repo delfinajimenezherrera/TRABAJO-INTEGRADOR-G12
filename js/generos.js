@@ -64,3 +64,4 @@ fetch(urlGenSe)
     console.log(error)
     return error
 })
+
