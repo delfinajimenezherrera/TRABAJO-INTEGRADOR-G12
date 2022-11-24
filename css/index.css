@@ -131,6 +131,21 @@ a.bordegen{
     
 }
 /* Index */ 
+.resultadopeli{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around; 
+    margin: 1% 1% 5% 1%;
+
+}
+.resultadoserie{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around; 
+    margin: 1% 1% 5% 1%;
+}
 .peliculaspop {
    display: flex;
     flex-wrap: wrap;
@@ -275,6 +290,7 @@ a.angen{
     width: 10%;
 }
 
+
 /* Media */
 
 @font-face { /** para agregar nuevas tipografías, descargamos en ttf y creamos carpeta */
@@ -340,6 +356,14 @@ a.angen{
     align-items: center;
 }
 .peliculaspop{
+    flex-direction: column;
+    align-items: center;
+}
+.resultadopeli{
+    flex-direction: column;
+    align-items: center;
+}
+.resultadoserie{
     flex-direction: column;
     align-items: center;
 }
