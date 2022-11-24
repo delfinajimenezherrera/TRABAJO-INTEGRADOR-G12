@@ -15,7 +15,7 @@ fetch(urlPeliculasPopu)
 
 .then(function (data) {
     console.log(data)
-    let finalHtml="" //vacio para que se vaya rellenando a medida que pasa el for
+    let vacioHTML="" //vacio para que se vaya rellenando a medida que pasa el for
     let info = data.results;
     for (let i=0; i<5; i++) {
         let titulo = info[i].title //vas agarrando dentro de la api, dependiendo de como se llame la seccion en la cual esta el titulo. Con el [i], se va modificando a medida que trascurre el id
@@ -24,7 +24,7 @@ fetch(urlPeliculasPopu)
         let id = info[i].id
 
     //ahora habria que poner que se modifique en la pagina HTML con el inner
-        finalHtml += `<a class="borde" href="./detail- movie.html?idPersonaje=${id}">
+        vacioHTML += `<a class="borde" href="./detail- movie.html?idPersonaje=${id}">
         <article class="pelicula">
             <img class="imagenport" src="https://image.tmdb.org/t/p/w500/${imagen}">
             <div class= "titaño">
@@ -34,7 +34,7 @@ fetch(urlPeliculasPopu)
             </a>
         </article>`
     }
-    seccion.innerHTML= finalHtml;
+    seccion.innerHTML= vacioHTML;
     return data
 })
 
@@ -52,7 +52,7 @@ fetch(urlSeriesPopu)
 .then(function (data) {
     console.log(data)
     let info = data.results;
-    let finalHtml=""
+    let vacioHTML=""
     for (let i=0; i<5; i++) {
         let titulo = info[i].name
         let fechaEstreno = info[i].first_air_date
@@ -60,7 +60,7 @@ fetch(urlSeriesPopu)
         let id = info[i].id
 
     //ahora habria que poner que se modifique en la pagina HTML
-        finalHtml += `<a class="borde" href="./detail-serie.html?idPersonaje=${id}">
+        vacioHTML += `<a class="borde" href="./detail-serie.html?idPersonaje=${id}">
         <article class="pelicula">
             <img class="imagenport" src="https://image.tmdb.org/t/p/w500/${imagen}">
             <div class= "titaño">
@@ -70,7 +70,7 @@ fetch(urlSeriesPopu)
             </a>
         </article>`
     }
-    seccion2.innerHTML= finalHtml;
+    seccion2.innerHTML= vacioHTML;
     return data
 })
 
@@ -89,15 +89,15 @@ fetch(urlLoMasVistoPeli)
 .then(function (data) {
     console.log(data)
     let info = data.results;
-    let finalHtml=""
+    let vacioHTML=""
     for (let i=0; i<5; i++) {
         let titulo = info[i].title
         let fechaEstreno = info[i].release_date
         let imagen = info[i].backdrop_path
         let id = info[i].id
 
-    //ahora abria que poner que se modifique en la pagina HTML
-        finalHtml += `<a class="borde" href="./detail- movie.html?idPersonaje=${id}">
+    //ahora habria que poner que se modifique en la pagina HTML
+    vacioHTML += `<a class="borde" href="./detail- movie.html?idPersonaje=${id}">
         <article class="pelicula">
             <img class="imagenport" src="https://image.tmdb.org/t/p/w500/${imagen}">
             <div class= "titaño">
@@ -107,7 +107,7 @@ fetch(urlLoMasVistoPeli)
             </a>
         </article>`
     }
-    seccion3.innerHTML= finalHtml;
+    seccion3.innerHTML= vacioHTML;
     return data
 })
 

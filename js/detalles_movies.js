@@ -97,7 +97,7 @@ verMasPelis.addEventListener("click", function(e) {
     } 
 }) 
 
-// un id por cada pelicula que agregas a favoritos. cuando agureges etsas metineod el id ne le local storage. Cuanod cargues la pagina de favortitos vas a hacer un fecthn 
+// un id por cada pelicula que agregas a favoritos. cuando agregues estas metiendo el id en le local storage. Cuando cargues la pagina de favortitos vas a hacer un fetch 
 let favoritos=[]
 
 let recuperoStorage = localStorage.getItem("favoritos")

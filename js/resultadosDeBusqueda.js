@@ -12,16 +12,16 @@ let queryStringObj = new URLSearchParams(queryString);
 let query = queryStringObj.get('busqueda'); //duda: cuando agrego el punto adelante, me toma el nombre pero se me van las imagenes de la api
 let barras= document.querySelector (".barras")
 //let mediaType = queryStringObj.get('mediaType');
-
 let apiKey = "c8c96a59cf4e2e778a6bf46883490734"
+//let realUrl= `https://api.themoviedb.org/3/search/multi?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&query=${query}&page=1&include_adult=false`;
 let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`;
 let url2= `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`; 
-//let realUrl= `https://api.themoviedb.org/3/search/multi?api_key=c8c96a59cf4e2e778a6bf46883490734&language=en-US&query=${query}&page=1&include_adult=false`;
 let container = document.querySelector(".peliculaspop");
 barras.innerText = `"Resultados de busqueda para: ${query}"`;
 
   
  //PELI
+
  fetch(url)
     .then(function (response) {
         return response.json()
@@ -57,16 +57,16 @@ barras.innerText = `"Resultados de busqueda para: ${query}"`;
         console.log(err)
     })
 //SERIE
+
 fetch(url2)
-.then(
-    function(response){
+.then(function(response){
         return response.json();
     }
 )
-.then(function(data1){
+.then(function(data2){
     series=''
-    console.log(data1);
-    let info = data1.results;
+    console.log(data2);
+    let info = data2.results;
     if (info.length== 0){
         barras.innerText=`No existe el resultado para ${query}`;
     }
@@ -85,7 +85,7 @@ fetch(url2)
                     </article>`
     }
     container.innerHTML=series;  
-    return data1;
+    return data2;
 })  
 .catch(function(error){
         console.log(error)
